@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIOC - Multidisciplinary Integrated Oncology Center | Cancer Care Specialists</title>
+  <meta name="description" content="Leading cancer care center providing comprehensive oncology services with multidisciplinary approach. Expert oncologists, advanced treatments, and compassionate care.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom palette to mirror screenshot */
+    :root{
+      --navy:#0b3b61; /* header */
+      --sky:#e9f6fb;   /* pale section */
+      --accent:#ffd24d; /* yellow CTA */
+      --cta-green:#28a745; /* green CTA used in hero */
+    }
+    
+    /* Hero Carousel Styles - Removed duplicate, see below for full definition */
+    
+    .carousel-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    
+    .hero-slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    .hero-slide.active {
+      display: block;
+      opacity: 1;
+    }
+    
+    .hero-image {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      position: relative;
+    }
+    
+    .hero-image.active {
+      display: block;
+      opacity: 1;
+    }
+    
+    /* Carousel Image Responsiveness */
+    .hero-slide .relative {
+      width: 100%;
+      height: auto;
+    }
+    
+    .hero-slide img, .hero-image img {
+      width: 100% !important;
+      height: 400px !important;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      display: block;
+      /* Override any conflicting styles */
+      max-width: 100% !important;
+      flex-shrink: 0;
+    }
+    
+    /* Ensure container doesn't constrain image */
+    .hero-slide .relative {
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+      .hero-slide img, .hero-image img {
+        height: 450px !important;
+      }
+    }
+    
+    /* Desktop/Tablet */
+    @media (max-width: 1024px) {
+      .hero-slide {
+        padding: 3rem 1.5rem;
+      }
+      
+      .hero-slide img, .hero-image img {
+        height: 350px !important;
+      }
+    }
+    
+    /* Tablet/Mobile */
+    @media (max-width: 768px) {
+      .carousel-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+      
+      .carousel-images {
+        order: -1; /* Show images first on mobile */
+      }
+      
+      .hero-slide .space-y-6 {
+        padding: 1.5rem;
+        width: 100%;
+      }
+      
+      .hero-slide img, .hero-image img {
+        height: 300px !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        object-fit: cover !important;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .hero-slide .space-y-6 {
+        padding: 1rem;
+      }
+      
+      .hero-slide img, .hero-image img {
+        height: 250px !important;
+      }
+      
+      .hero-slide h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+      }
+      
+      .hero-slide p {
+        font-size: 0.9rem !important;
+      }
+    }
+    
+    /* Extra Small Mobile */
+    @media (max-width: 360px) {
+      .hero-slide .space-y-6 {
+        padding: 0.75rem;
+      }
+      
+      .hero-slide img, .hero-image img {
+        height: 220px !important;
+      }
+      
+      .hero-slide h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.1 !important;
+      }
+      
+      .hero-slide .flex {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+      }
+      
+      .hero-slide .flex a {
+        text-align: center !important;
+        width: 100% !important;
+      }
+    }
+    
+    /* Animation Styles */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    @keyframes slideInFromBottom {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Animation Classes */
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-in-left {
+      animation: fadeInLeft 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-in-right {
+      animation: fadeInRight 0.8s ease-out forwards;
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .animate-bounce-slow {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    .animate-slide-in-bottom {
+      animation: slideInFromBottom 0.6s ease-out forwards;
+    }
+    
+    /* Hover Effects */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Treatment Journey Hover Effects */
+    .treatment-step {
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding: 1.75rem;
+      margin: 0.75rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transform: translateY(0) scale(1);
+      box-shadow: 0 4px 15px rgba(11, 59, 97, 0.08);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .treatment-step:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 25px 50px rgba(11, 59, 97, 0.2);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(233, 246, 251, 0.9));
+      z-index: 10;
+    }
+    
+    .treatment-step:hover .step-number {
+      transform: scale(1.15) rotate(8deg);
+      box-shadow: 0 12px 25px rgba(11, 59, 97, 0.35);
+    }
+    
+    .treatment-step:hover h4 {
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+    
+    .treatment-step:hover p {
+      color: #374151;
+      transform: translateY(-2px);
+    }
+    
+    .step-number {
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    /* Treatment Journey Container */
+    .treatment-journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0;
+      align-items: start;
+      padding: 1.5rem 0;
+    }
+    
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    
+    .hover-glow {
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .hover-glow:hover {
+      box-shadow: 0 0 20px rgba(11, 59, 97, 0.3);
+    }
+    
+    /* Loading Animation */
+    .loading-dots::after {
+      content: '';
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0% { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+      100% { content: ''; }
+    }
+    
+    /* Scroll Reveal */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Stagger Animation */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    
+    .carousel-dot.active {
+      background-color: var(--navy) !important;
+    }
+    
+    /* Carousel Section Positioning */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+
+<!-- HEADER -->
+<header class="bg-[color:var(--navy)] text-white">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="services.html" class="hover:underline">Services</a>
+        <a href="doctors.html" class="hover:underline">Doctors</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <!-- mobile menu button -->
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="max-w-7xl mx-auto px-6">
+    <nav class="text-sm text-gray-600">
+      <span class="text-[color:var(--navy)] font-semibold">Home</span>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO CAROUSEL -->
+<section class="relative">
+  <div class="hero-carousel">
+    <div class="carousel-container">
+      <!-- Slide 1 -->
+      <div class="hero-slide active">
+        <div class="space-y-6 animate-fade-in-left">
+          <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-900">Integrated multi-disciplinary Cancer Specialist</h1>
+          <p class="text-gray-600 max-w-lg">Delivering compassionate, evidence-based cancer care with a multidisciplinary team — diagnosis, treatment and continuous support.</p>
+          <div class="flex items-center space-x-3">
+            <a href="appointment.html" class="inline-block bg-[color:var(--cta-green)] text-white px-5 py-3 rounded-md font-medium hover-lift animate-pulse-slow">Book Appointment</a>
+            <a href="services.html" class="inline-block px-4 py-3 border rounded-md text-gray-700 hover-lift">Our Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <div class="space-y-6">
+          <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-900">Advanced Cancer Treatment & Research Center</h1>
+          <p class="text-gray-600 max-w-lg">Leading the fight against cancer with cutting-edge technology, innovative treatments, and personalized care plans tailored to each patient's unique needs.</p>
+          <div class="flex items-center space-x-3">
+            <a href="services.html" class="inline-block bg-[color:var(--cta-green)] text-white px-5 py-3 rounded-md font-medium">Explore Treatments</a>
+            <a href="doctors.html" class="inline-block px-4 py-3 border rounded-md text-gray-700">Meet Our Experts</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <div class="space-y-6">
+          <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-900">Compassionate Care, Exceptional Outcomes</h1>
+          <p class="text-gray-600 max-w-lg">More than 80,000 patients trust us with their cancer journey. Experience world-class care with a human touch, supported by 26 specialist doctors and 50+ medical specialties.</p>
+          <div class="flex items-center space-x-3">
+            <a href="about.html" class="inline-block bg-[color:var(--cta-green)] text-white px-5 py-3 rounded-md font-medium">Our Story</a>
+            <a href="contact.html" class="inline-block px-4 py-3 border rounded-md text-gray-700">Get Support</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Slides -->
+      <div class="carousel-images">
+        <!-- Image 1 -->
+        <div class="hero-image active">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="medical team" class="shadow-lg hover-scale" />
+            <div class="absolute bottom-4 right-4 animate-bounce-slow">
+              <a href="tel:+919122567890" class="inline-flex items-center bg-white px-3 py-2 rounded-full shadow hover-glow">
+                <svg class="w-5 h-5 mr-2 text-[color:var(--navy)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="hero-image">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="research facility" class="shadow-lg hover-scale" />
+            <div class="absolute bottom-4 right-4 animate-bounce-slow">
+              <a href="tel:+919122567890" class="inline-flex items-center bg-white px-3 py-2 rounded-full shadow hover-glow">
+                <svg class="w-5 h-5 mr-2 text-[color:var(--navy)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="hero-image">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="patient care" class="shadow-lg hover-scale" />
+            <div class="absolute bottom-4 right-4 animate-bounce-slow">
+              <a href="tel:+919122567890" class="inline-flex items-center bg-white px-3 py-2 rounded-full shadow hover-glow">
+                <svg class="w-5 h-5 mr-2 text-[color:var(--navy)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <div class="flex space-x-2 items-center">
+      <button class="carousel-dot w-3 h-3 rounded-full bg-[color:var(--navy)] transition-all" data-slide="0"></button>
+      <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all" data-slide="1"></button>
+      <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all" data-slide="2"></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- WHAT WE OFFER -->
+<section id="about" class="bg-[color:var(--sky)]">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="text-2xl font-bold">What we offer at MIOC</h2>
+      <p class="mt-4 text-gray-700">Comprehensive cancer care delivered through a collaborative team of oncologists, surgeons, radiologists and support specialists. We emphasize early detection, evidence-based treatments and compassionate follow-up care.</p>
+      <ul class="mt-6 space-y-3 text-gray-700">
+        <li>• Multidisciplinary tumor boards</li>
+        <li>• Personalized treatment plans</li>
+        <li>• Integrated supportive services</li>
+      </ul>
+    </div>
+    <div class="flex justify-center lg:justify-end">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="doctors" class="rounded-lg shadow-md w-full max-w-md object-cover" />
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENT FLOW -->
+<section class="max-w-7xl mx-auto px-6 py-12 scroll-reveal">
+  <h3 class="text-center text-xl font-semibold animate-fade-in-up mb-8">Your Treatment Journey at MIOC</h3>
+  <div class="treatment-journey-grid">
+    <!-- step card -->
+    <div class="flex flex-col items-center text-center space-y-4 scroll-reveal stagger-1 treatment-step">
+      <div class="w-16 h-16 bg-[color:var(--navy)] text-white rounded-full flex items-center justify-center text-xl font-bold step-number">1</div>
+      <h4 class="font-semibold text-lg transition-all duration-300">Consultation</h4>
+      <p class="text-sm text-gray-600 transition-all duration-300">Initial assessment and diagnosis with our expert oncologists</p>
+    </div>
+    <div class="flex flex-col items-center text-center space-y-4 scroll-reveal stagger-2 treatment-step">
+      <div class="w-16 h-16 bg-[color:var(--navy)] text-white rounded-full flex items-center justify-center text-xl font-bold step-number">2</div>
+      <h4 class="font-semibold text-lg transition-all duration-300">Treatment Plan</h4>
+      <p class="text-sm text-gray-600 transition-all duration-300">Personalized care strategy developed by our multidisciplinary team</p>
+    </div>
+    <div class="flex flex-col items-center text-center space-y-4 scroll-reveal stagger-3 treatment-step">
+      <div class="w-16 h-16 bg-[color:var(--navy)] text-white rounded-full flex items-center justify-center text-xl font-bold step-number">3</div>
+      <h4 class="font-semibold text-lg transition-all duration-300">Treatment</h4>
+      <p class="text-sm text-gray-600 transition-all duration-300">Evidence-based therapy using advanced medical technology</p>
+    </div>
+    <div class="flex flex-col items-center text-center space-y-4 scroll-reveal stagger-4 treatment-step">
+      <div class="w-16 h-16 bg-[color:var(--navy)] text-white rounded-full flex items-center justify-center text-xl font-bold step-number">4</div>
+      <h4 class="font-semibold text-lg transition-all duration-300">Follow-up</h4>
+      <p class="text-sm text-gray-600 transition-all duration-300">Ongoing support and monitoring throughout your recovery journey</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="bg-[color:var(--sky)] scroll-reveal">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-4 gap-6 text-center">
+    <div class="scroll-reveal stagger-1">
+      <div class="text-3xl font-extrabold animate-fade-in-up counter" data-target="80000">0+</div>
+      <div class="text-sm text-gray-600">Patients served</div>
+    </div>
+    <div class="scroll-reveal stagger-2">
+      <div class="text-3xl font-extrabold animate-fade-in-up counter" data-target="26">0</div>
+      <div class="text-sm text-gray-600">Specialist doctors</div>
+    </div>
+    <div class="scroll-reveal stagger-3">
+      <div class="text-3xl font-extrabold animate-fade-in-up counter" data-target="50">0+</div>
+      <div class="text-sm text-gray-600">Medical specialties</div>
+    </div>
+    <div class="scroll-reveal stagger-4 ">
+      <div class="text-3xl font-extrabold animate-fade-in-up counter" data-target="15">0+</div>
+      <div class="text-sm text-gray-600">Years of excellence</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS GRID -->
+<section id="services" class="max-w-7xl mx-auto px-6 py-12">
+  <h3 class="text-center text-2xl font-semibold">How MIOC is different</h3>
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 9 cards example -->
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">🏥</div>
+      <h4 class="mt-3 font-semibold">Modern Infrastructure</h4>
+      <p class="mt-2 text-sm text-gray-600">State-of-the-art facilities and wards designed for patient comfort.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">🧬</div>
+      <h4 class="mt-3 font-semibold">Advanced Diagnostics</h4>
+      <p class="mt-2 text-sm text-gray-600">High precision imaging and pathology services.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">👩‍⚕️</div>
+      <h4 class="mt-3 font-semibold">Expert Team</h4>
+      <p class="mt-2 text-sm text-gray-600">Multidisciplinary specialists collaborate on every case.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">⚙️</div>
+      <h4 class="mt-3 font-semibold">Cutting-edge Tech</h4>
+      <p class="mt-2 text-sm text-gray-600">Robotics, IMRT and targeted therapies.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">🤝</div>
+      <h4 class="mt-3 font-semibold">Patient Support</h4>
+      <p class="mt-2 text-sm text-gray-600">Counseling, nutrition and rehabilitation programs.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">📈</div>
+      <h4 class="mt-3 font-semibold">Research & Trials</h4>
+      <p class="mt-2 text-sm text-gray-600">Active clinical research and trial enrollment.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">🌍</div>
+      <h4 class="mt-3 font-semibold">Community Outreach</h4>
+      <p class="mt-2 text-sm text-gray-600">Screening and awareness programs.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">💡</div>
+      <h4 class="mt-3 font-semibold">Transparent Pricing</h4>
+      <p class="mt-2 text-sm text-gray-600">Clear costing and financial counselling support.</p>
+    </article>
+
+    <article class="p-6 bg-white rounded-lg shadow">
+      <div class="text-3xl">🏆</div>
+      <h4 class="mt-3 font-semibold">Accreditations</h4>
+      <p class="mt-2 text-sm text-gray-600">Recognised certifications and partnerships.</p>
+    </article>
+  </div>
+</section>
+
+<!-- SPECIALISTS / DOCTORS (carousel placeholder) -->
+<section id="doctors" class="bg-[color:var(--sky)] py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-2xl font-semibold text-center mb-12">Specialized Doctors at MIOC</h3>
+    <div class="overflow-x-auto py-4">
+      <div class="flex space-x-8 px-4">
+        <!-- doctor card -->
+        <div class="min-w-[260px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover-lift">
+          <div class="h-40 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-500">Photo</div>
+          <div class="space-y-2">
+            <div class="font-semibold text-lg">Dr. Sarah Johnson</div>
+            <div class="text-sm text-gray-600">Medical Oncologist</div>
+            <div class="text-xs text-gray-500">15+ years experience</div>
+          </div>
+        </div>
+        <div class="min-w-[260px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover-lift">
+          <div class="h-40 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-500">Photo</div>
+          <div class="space-y-2">
+            <div class="font-semibold text-lg">Dr. Michael Chen</div>
+            <div class="text-sm text-gray-600">Radiation Oncologist</div>
+            <div class="text-xs text-gray-500">12+ years experience</div>
+          </div>
+        </div>
+        <div class="min-w-[260px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover-lift">
+          <div class="h-40 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-500">Photo</div>
+          <div class="space-y-2">
+            <div class="font-semibold text-lg">Dr. Emily Rodriguez</div>
+            <div class="text-sm text-gray-600">Surgical Oncologist</div>
+            <div class="text-xs text-gray-500">18+ years experience</div>
+          </div>
+        </div>
+        <div class="min-w-[260px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover-lift">
+          <div class="h-40 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-500">Photo</div>
+          <div class="space-y-2">
+            <div class="font-semibold text-lg">Dr. David Kumar</div>
+            <div class="text-sm text-gray-600">Hematologist</div>
+            <div class="text-xs text-gray-500">14+ years experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND NEAREST CENTER -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+    <div class="bg-[color:var(--sky)] p-6 rounded-lg">
+      <h4 class="text-lg font-semibold">Find the nearest center</h4>
+      <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <select class="p-3 rounded border">
+          <option>Choose City</option>
+        </select>
+        <select class="p-3 rounded border">
+          <option>Specialty</option>
+        </select>
+        <select class="p-3 rounded border">
+          <option>Doctor</option>
+        </select>
+        <button class="bg-[color:var(--navy)] text-white p-3 rounded">Search</button>
+      </form>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="medical center" class="rounded-lg shadow" />
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="bg-[color:var(--sky)] py-10">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <div>
+      <h4 class="text-lg font-semibold">Support our patient care programs</h4>
+      <p class="text-sm text-gray-700 mt-2">Your donations help fund screening camps, subsidised care and research.</p>
+    </div>
+    <div>
+      <a href="#" class="bg-[color:var(--accent)] px-4 py-3 rounded-md font-semibold">Donate Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- AWARENESS CAMPAIGNS (videos) -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <h3 class="text-center text-2xl font-semibold">Our Latest Awareness Campaigns</h3>
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow p-4 h-56 flex items-center justify-center">Video 1</div>
+    <div class="bg-white rounded-lg shadow p-4 h-56 flex items-center justify-center">Video 2</div>
+    <div class="bg-white rounded-lg shadow p-4 h-56 flex items-center justify-center">Video 3</div>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section class="bg-[color:var(--sky)] py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-2xl font-semibold">Our Latest Blogs</h3>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article class="bg-white rounded-lg shadow p-6">
+        <div class="text-xs text-gray-500 mb-2">December 15, 2024</div>
+        <h4 class="font-semibold">Understanding Immunotherapy: A New Hope in Cancer Treatment</h4>
+        <p class="text-sm text-gray-600 mt-2">Discover how immunotherapy is revolutionizing cancer treatment by harnessing the body's own immune system to fight cancer cells.</p>
+        <a class="mt-4 inline-block text-[color:var(--navy)] font-semibold" href="#">Read more →</a>
+      </article>
+
+      <article class="bg-white rounded-lg shadow p-6">
+        <div class="text-xs text-gray-500 mb-2">December 10, 2024</div>
+        <h4 class="font-semibold">Early Detection Saves Lives: Cancer Screening Guidelines</h4>
+        <p class="text-sm text-gray-600 mt-2">Learn about the importance of regular cancer screenings and which tests are recommended for different age groups and risk factors.</p>
+        <a class="mt-4 inline-block text-[color:var(--navy)] font-semibold" href="#">Read more →</a>
+      </article>
+
+      <article class="bg-white rounded-lg shadow p-6">
+        <div class="text-xs text-gray-500 mb-2">December 5, 2024</div>
+        <h4 class="font-semibold">Nutrition During Cancer Treatment: A Patient's Guide</h4>
+        <p class="text-sm text-gray-600 mt-2">Expert nutritional advice to help maintain strength and support recovery during cancer treatment and beyond.</p>
+        <a class="mt-4 inline-block text-[color:var(--navy)] font-semibold" href="#">Read more →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <h3 class="text-2xl font-semibold text-center">Gallery</h3>
+  <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="h-36 bg-gray-100 rounded-lg"></div>
+    <div class="h-36 bg-gray-100 rounded-lg"></div>
+    <div class="h-36 bg-gray-100 rounded-lg"></div>
+    <div class="h-36 bg-gray-100 rounded-lg"></div>
+  </div>
+</section>
+
+<!-- APPOINTMENT FORM -->
+<section id="appointment" class="bg-[color:var(--sky)] py-12">
+  <div class="max-w-4xl mx-auto px-6">
+    <h3 class="text-center text-2xl font-semibold mb-6">Book Your Appointment</h3>
+    <form class="bg-white p-6 rounded-lg shadow grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input class="p-3 border rounded" placeholder="Full name" />
+      <input class="p-3 border rounded" placeholder="Email" />
+      <input class="p-3 border rounded" placeholder="Phone" />
+      <select class="p-3 border rounded">
+        <option>Department</option>
+      </select>
+      <select class="p-3 border rounded">
+        <option>Doctor</option>
+      </select>
+      <textarea class="p-3 border rounded md:col-span-2" placeholder="Message"></textarea>
+      <button class="md:col-span-2 bg-[color:var(--navy)] text-white p-3 rounded">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div>
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto mb-4">
+      <h5 class="font-semibold">About MIOC</h5>
+      <p class="text-sm text-gray-600 mt-3">Committed to providing comprehensive cancer care with compassion and excellence.</p>
+    </div>
+    <div>
+      <h5 class="font-semibold">Quick Links</h5>
+      <ul class="mt-3 text-sm space-y-2 text-gray-600">
+        <li><a href="index.html" class="hover:text-[color:var(--navy)]">Home</a></li>
+        <li><a href="about.html" class="hover:text-[color:var(--navy)]">About Us</a></li>
+        <li><a href="services.html" class="hover:text-[color:var(--navy)]">Services</a></li>
+        <li><a href="doctors.html" class="hover:text-[color:var(--navy)]">Doctors</a></li>
+        <li><a href="contact.html" class="hover:text-[color:var(--navy)]">Contact</a></li>
+        <li><a href="appointment.html" class="hover:text-[color:var(--navy)]">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-semibold">Departments</h5>
+      <ul class="mt-3 text-sm space-y-2 text-gray-600">
+        <li>Medical Oncology</li>
+        <li>Radiation Oncology</li>
+        <li>Surgical Oncology</li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-semibold">Contact</h5>
+      <div class="text-sm text-gray-600 mt-3">
+        <p>123 Medical Center Drive<br/>Mumbai, Maharashtra 400001<br/>India</p>
+        <p class="mt-2">Phone: +91 22 2567 8900<br/>Emergency: +91 22 2567 8911<br/>Email: info@mioc.in</p>
+        <div class="flex space-x-3 mt-3">
+          <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
+          <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
+          <a href="#" class="text-pink-600 hover:text-pink-800">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t bg-white py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
+      <div>© 2025 MIOC. All rights reserved.</div>
+      <div class="flex items-center space-x-3">
+        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACTS -->
+<div class="fixed right-4 bottom-24 space-y-3">
+  <a href="https://wa.me/" class="block bg-green-600 text-white p-3 rounded-full shadow">WA</a>
+  <a href="tel:+123456789" class="block bg-[color:var(--accent)] text-black p-3 rounded-full shadow">Call</a>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-[color:var(--navy)] text-white">
+  <nav class="px-6 py-4 space-y-3">
+    <a href="index.html" class="block hover:underline">Home</a>
+    <a href="about.html" class="block hover:underline">About</a>
+    <a href="services.html" class="block hover:underline">Services</a>
+    <a href="doctors.html" class="block hover:underline">Doctors</a>
+    <a href="contact.html" class="block hover:underline">Contact</a>
+    <a href="appointment.html" class="block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold mt-3">Book Appointment</a>
+  </nav>
+</div>
+
+<!-- Mobile menu script -->
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  
+  btn?.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
+
+<!-- Hero Carousel Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.hero-slide');
+    const images = document.querySelectorAll('.hero-image');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    function showSlide(index) {
+      // Hide all text slides
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Hide all image slides
+      images.forEach(image => {
+        image.classList.remove('active');
+      });
+      
+      // Show current text slide
+      slides[index].classList.add('active');
+      
+      // Show current image slide
+      images[index].classList.add('active');
+      
+      // Update dots
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      dots[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prev);
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    // Arrow buttons removed - navigation via dots and swipe only
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index);
+        startAutoSlide();
+      });
+    });
+
+    // Pause on hover
+    const carousel = document.querySelector('.hero-carousel');
+    carousel?.addEventListener('mouseenter', stopAutoSlide);
+    carousel?.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel?.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        stopAutoSlide();
+        if (diff > 0) {
+          nextSlide(); // Swipe left - next slide
+        } else {
+          prevSlide(); // Swipe right - previous slide
+        }
+        startAutoSlide();
+      }
+    }
+
+    // Handle window resize and orientation changes
+    window.addEventListener('resize', () => {
+      showSlide(currentSlide); // Recalculate position on resize
+    });
+
+    // Initialize carousel
+    showSlide(0);
+    startAutoSlide();
+  });
+</script>
+
+<!-- Animation and Scroll Effects Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Scroll Reveal Animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          
+          // Trigger counter animation if it's a counter element
+          const counter = entry.target.querySelector('.counter');
+          if (counter) {
+            animateCounter(counter);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter Animation
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        // Format the number display
+        if (target >= 1000) {
+          element.textContent = Math.floor(current).toLocaleString() + '+';
+        } else {
+          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+        }
+      }, 16);
+    }
+
+    // Add hover effects to buttons and cards
+    const buttons = document.querySelectorAll('a[href], button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+      });
+      
+      button.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Floating animation for call-to-action buttons
+    const ctaButtons = document.querySelectorAll('.animate-pulse-slow');
+    ctaButtons.forEach(button => {
+      let direction = 1;
+      setInterval(() => {
+        const currentTransform = button.style.transform || 'translateY(0px)';
+        const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/) || [0, 0])[1];
+        const newY = currentY + (direction * 2);
+        
+        if (Math.abs(newY) > 5) {
+          direction *= -1;
+        }
+        
+        button.style.transform = `translateY(${newY}px)`;
+      }, 100);
+    });
+
+    // Parallax effect for hero images
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero-slide img');
+      
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Add loading animation to forms
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"], input[type="submit"]');
+        if (submitBtn) {
+          submitBtn.innerHTML = 'Loading<span class="loading-dots"></span>';
+          submitBtn.disabled = true;
+        }
+      });
+    });
+
+    // Staggered animation for grid items
+    const gridItems = document.querySelectorAll('.grid > div, .grid > article');
+    gridItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.1}s`;
+      item.classList.add('animate-fade-in-up');
+    });
+
+    // Add ripple effect to buttons
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+      circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+      circle.classList.add('ripple');
+
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    }
+
+    // Add ripple effect CSS
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
+      
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(rippleStyle);
+
+    // Apply ripple effect to buttons
+    const rippleButtons = document.querySelectorAll('button, .btn, a[href*="appointment"]');
+    rippleButtons.forEach(button => {
+      button.style.position = 'relative';
+      button.style.overflow = 'hidden';
+      button.addEventListener('click', createRipple);
+    });
+  });
+</script>
+
+</body>
+</html>
