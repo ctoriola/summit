@@ -1,18 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - MIOC | Multidisciplinary Integrated Oncology Center</title>
-  <meta name="description" content="Learn about MIOC's mission, vision, and commitment to providing world-class cancer care through our multidisciplinary approach and expert medical team.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - MIOC</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom palette to mirror screenshot */
     :root {
       --navy: #AA60C8;
       --accent: #fbbf24;
-      --sky: #FFDFEF;   /* pale section */
-      --cta-green: #AA60C8; /* green CTA used in hero */
     }
   </style>
 </head>
@@ -38,7 +34,7 @@
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
                 <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
-                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
+                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)]">Our Team</a>
               </div>
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
@@ -61,7 +57,7 @@
     </div>
 
     <div class="flex items-center space-x-3">
-      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold">Book Appointment</a>
       <!-- mobile menu button -->
       <button class="md:hidden" id="mobileMenuBtn">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -173,200 +169,108 @@
   <div class="max-w-7xl mx-auto px-6">
     <nav class="text-sm text-gray-600">
       <a href="index.html" class="hover:text-[color:var(--navy)]">Home</a> / 
-      <span class="text-[color:var(--navy)] font-semibold">About Us</span>
+      <a href="about.html" class="hover:text-[color:var(--navy)]">About Us</a> / 
+      <span class="text-[color:var(--navy)] font-semibold">Our Team</span>
     </nav>
   </div>
 </section>
 
-<!-- HERO SECTION -->
-<section class="py-16 bg-gradient-to-r from-blue-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">About MIOC</h1>
-    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Pioneering comprehensive cancer care through innovation, compassion, and multidisciplinary excellence since 2010.</p>
-  </div>
-</section>
-
-<!-- MISSION & VISION -->
-<section class="py-16">
+<!-- MAIN CONTENT -->
+<main class="py-16">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-        <p class="text-gray-600 mb-6">To provide world-class, comprehensive cancer care through a multidisciplinary approach that combines cutting-edge medical technology with compassionate patient-centered care. We are committed to improving outcomes and quality of life for every patient we serve.</p>
-        
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-        <p class="text-gray-600">To be the leading cancer care center in India, recognized globally for our innovative treatments, research contributions, and exceptional patient outcomes while making quality cancer care accessible to all.</p>
-      </div>
-      <div class="bg-[color:var(--sky)] p-8 rounded-lg">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Core Values</h3>
-        <ul class="space-y-4">
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-[color:var(--navy)] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <div>
-              <h4 class="font-semibold">Compassion</h4>
-              <p class="text-sm text-gray-600">Treating every patient with empathy and understanding</p>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-[color:var(--navy)] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <div>
-              <h4 class="font-semibold">Excellence</h4>
-              <p class="text-sm text-gray-600">Delivering the highest quality of medical care</p>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-[color:var(--navy)] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <div>
-              <h4 class="font-semibold">Innovation</h4>
-              <p class="text-sm text-gray-600">Embracing cutting-edge technology and research</p>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-[color:var(--navy)] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <div>
-              <h4 class="font-semibold">Integrity</h4>
-              <p class="text-sm text-gray-600">Maintaining transparency and ethical practices</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-[color:var(--navy)] mb-6">Our Team</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Meet the dedicated professionals who make MIOC a leader in medical innovation and patient care.</p>
     </div>
-  </div>
-</section>
 
-<!-- OUR STORY -->
-<section class="py-16 bg-[color:var(--sky)]">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">Founded with a vision to transform cancer care in India, MIOC has grown from a small clinic to a comprehensive cancer center.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="text-center">
-        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-          <span class="text-2xl font-bold text-[color:var(--navy)]">2010</span>
+    <!-- Team Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Team Member 1 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
         </div>
-        <h3 class="font-semibold mb-2">Foundation</h3>
-        <p class="text-sm text-gray-600">MIOC was established with a team of 5 dedicated oncologists</p>
-      </div>
-      
-      <div class="text-center">
-        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-          <span class="text-2xl font-bold text-[color:var(--navy)]">2015</span>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Sarah Johnson</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Chief Medical Officer</p>
+          <p class="text-gray-600 text-sm">Leading medical research and innovation with over 15 years of experience in oncology and clinical trials.</p>
         </div>
-        <h3 class="font-semibold mb-2">Expansion</h3>
-        <p class="text-sm text-gray-600">Opened our 450,000 sq ft state-of-the-art facility</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-          <span class="text-2xl font-bold text-[color:var(--navy)]">2020</span>
-        </div>
-        <h3 class="font-semibold mb-2">Innovation</h3>
-        <p class="text-sm text-gray-600">Introduced robotic surgery and precision medicine programs</p>
-      </div>
-      
-      <div class="text-center">
-        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-          <span class="text-2xl font-bold text-[color:var(--navy)]">2024</span>
-        </div>
-        <h3 class="font-semibold mb-2">Excellence</h3>
-        <p class="text-sm text-gray-600">Achieved international accreditation and served 80,000+ patients</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- LEADERSHIP TEAM -->
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Our experienced leadership team brings together decades of expertise in oncology, healthcare administration, and medical research.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Rajesh Sharma" class="w-full h-full object-cover">
+      <!-- Team Member 2 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
         </div>
-        <h3 class="text-xl font-bold text-gray-900">Dr. Rajesh Sharma</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Chairman & Chief Medical Officer</p>
-        <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, 25+ years experience</p>
-        <p class="text-xs text-gray-500 mt-2">Former Head of Oncology at AIIMS, Delhi</p>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1594824475317-8b7d0e8e4b1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Priya Patel" class="w-full h-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Michael Chen</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Research Director</p>
+          <p class="text-gray-600 text-sm">Pioneering breakthrough treatments and leading our research initiatives in precision medicine.</p>
         </div>
-        <h3 class="text-xl font-bold text-gray-900">Dr. Priya Patel</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Director of Clinical Operations</p>
-        <p class="text-sm text-gray-600 mt-2">MD, MBA Healthcare Management, 20+ years experience</p>
-        <p class="text-xs text-gray-500 mt-2">Specialist in healthcare quality and patient safety</p>
       </div>
-      
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Mr. Anil Kumar" class="w-full h-full object-cover">
-        </div>
-        <h3 class="text-xl font-bold text-gray-900">Mr. Anil Kumar</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Chief Executive Officer</p>
-        <p class="text-sm text-gray-600 mt-2">MBA, 18+ years in healthcare administration</p>
-        <p class="text-xs text-gray-500 mt-2">Expert in healthcare operations and strategic planning</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ACCREDITATIONS & CERTIFICATIONS -->
-<section class="py-16 bg-[color:var(--sky)]">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Accreditations & Certifications</h2>
-      <p class="text-gray-600">Our commitment to quality is recognized by leading healthcare organizations worldwide.</p>
-    </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="bg-white rounded-lg p-6 text-center shadow-md">
-        <div class="text-3xl mb-3">🏆</div>
-        <h4 class="font-semibold text-sm">NABH Accredited</h4>
-        <p class="text-xs text-gray-600 mt-1">National Accreditation Board for Hospitals</p>
+      <!-- Team Member 3 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Emily Rodriguez</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Clinical Operations Manager</p>
+          <p class="text-gray-600 text-sm">Ensuring the highest standards of patient care and clinical trial management.</p>
+        </div>
       </div>
-      
-      <div class="bg-white rounded-lg p-6 text-center shadow-md">
-        <div class="text-3xl mb-3">🌟</div>
-        <h4 class="font-semibold text-sm">JCI Certified</h4>
-        <p class="text-xs text-gray-600 mt-1">Joint Commission International</p>
-      </div>
-      
-      <div class="bg-white rounded-lg p-6 text-center shadow-md">
-        <div class="text-3xl mb-3">🔬</div>
-        <h4 class="font-semibold text-sm">CAP Accredited</h4>
-        <p class="text-xs text-gray-600 mt-1">College of American Pathologists</p>
-      </div>
-      
-      <div class="bg-white rounded-lg p-6 text-center shadow-md">
-        <div class="text-3xl mb-3">📋</div>
-        <h4 class="font-semibold text-sm">ISO 9001:2015</h4>
-        <p class="text-xs text-gray-600 mt-1">Quality Management System</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA SECTION -->
-<section class="py-16 bg-gradient-to-r from-[color:var(--navy)] to-blue-800 text-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Begin Your Journey with Us?</h2>
-    <p class="text-xl mb-8 opacity-90">Experience compassionate, world-class cancer care at MIOC</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="appointment.html" class="bg-[color:var(--accent)] text-[color:var(--navy)] px-8 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">Book Appointment</a>
-      <a href="contact.html" class="border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[color:var(--navy)] transition">Contact Us</a>
+      <!-- Team Member 4 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. James Wilson</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Senior Oncologist</p>
+          <p class="text-gray-600 text-sm">Specialized in advanced cancer treatments and patient-centered care approaches.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Lisa Thompson</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Head of Clinical Trials</p>
+          <p class="text-gray-600 text-sm">Leading innovative clinical trials and advancing medical research for better patient outcomes.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="h-64 bg-gray-200 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Robert Kim</h3>
+          <p class="text-[color:var(--accent)] font-medium mb-3">Medical Affairs Director</p>
+          <p class="text-gray-600 text-sm">Bridging clinical research and medical practice to deliver cutting-edge treatments.</p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</main>
 
 <!-- FOOTER -->
 <footer class="bg-gray-50">
@@ -410,7 +314,7 @@
   </div>
   <div class="border-t bg-white py-4">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
-      <div> 2025 MIOC. All rights reserved.</div>
+      <div>&copy; 2025 MIOC. All rights reserved.</div>
       <div class="flex items-center space-x-3">
         <a href="#" class="hover:underline">Privacy</a>
         <a href="#" class="hover:underline">Terms</a>
@@ -436,36 +340,32 @@
     function openSidebar() {
       menu.classList.remove('-translate-x-full');
       overlay.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Prevent body scroll
+      document.body.style.overflow = 'hidden';
     }
     
     function closeSidebar() {
       menu.classList.add('-translate-x-full');
       overlay.classList.add('hidden');
-      document.body.style.overflow = ''; // Restore body scroll
+      document.body.style.overflow = '';
     }
     
     if (btn && menu && overlay) {
-      // Open sidebar when hamburger is clicked
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         openSidebar();
       });
       
-      // Close sidebar when close button is clicked
       closeBtn?.addEventListener('click', function(e) {
         e.preventDefault();
         closeSidebar();
       });
       
-      // Close sidebar when overlay is clicked
       overlay.addEventListener('click', function(e) {
         if (e.target === overlay) {
           closeSidebar();
         }
       });
       
-      // Close sidebar when any navigation link is clicked
       const navLinks = menu.querySelectorAll('a');
       navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -473,7 +373,6 @@
         });
       });
       
-      // Close sidebar on escape key
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
           closeSidebar();
@@ -491,17 +390,14 @@
         const isVisible = !aboutDropdown.classList.contains('opacity-0');
         
         if (isVisible) {
-          // Hide dropdown
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         } else {
-          // Show dropdown
           aboutDropdown.classList.remove('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(180deg)';
         }
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
         if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
