@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day Care Centre - MIOC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #AA60C8;
+      --accent: #fbbf24;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+
+<!-- HEADER -->
+<header class="bg-[color:var(--navy)] text-white">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center justify-between flex-1">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
+        <a href="index.html" class="hover:underline">Home</a>
+        <div class="relative">
+          <button id="aboutDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>About Us</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="aboutDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-3 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
+                <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
+                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
+                <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
+                <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
+                <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
+                <a href="bowclc-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">BoWCLC-2024</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Investor</div>
+                <a href="corporate-filing.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Corporate Filing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)]">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="doctors.html" class="hover:underline">Doctors</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="max-w-7xl mx-auto px-6">
+    <nav class="text-sm text-gray-600">
+      <a href="index.html" class="hover:text-[color:var(--navy)]">Home</a> / 
+      <a href="services.html" class="hover:text-[color:var(--navy)]">Services</a> / 
+      <span class="text-[color:var(--navy)] font-semibold">Day Care Centre</span>
+    </nav>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-[color:var(--navy)] mb-6">Day Care Centre</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Convenient outpatient cancer treatments in a comfortable, supportive environment</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Comprehensive Outpatient Care</h2>
+          <p class="text-gray-600 mb-6">Our Day Care Centre provides a comfortable, home-like environment for patients receiving outpatient cancer treatments. Designed with patient comfort and convenience in mind, our facility offers comprehensive care services that allow you to receive treatment and return home the same day.</p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-semibold text-[color:var(--navy)] mb-2">🏥 Services Offered</h3>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>• Chemotherapy infusions</li>
+                <li>• Immunotherapy treatments</li>
+                <li>• Blood transfusions</li>
+                <li>• Supportive care therapies</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[color:var(--navy)] mb-2">⏰ Operating Hours</h3>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>• Monday - Friday: 7:00 AM - 7:00 PM</li>
+                <li>• Saturday: 8:00 AM - 4:00 PM</li>
+                <li>• Sunday: Emergency only</li>
+                <li>• Holiday schedules vary</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Your Day Care Experience</h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="bg-[color:var(--accent)] text-[color:var(--navy)] rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <h3 class="font-semibold text-[color:var(--navy)]">Check-in & Assessment</h3>
+                <p class="text-gray-600 text-sm">Quick registration and pre-treatment health assessment by our nursing team.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-[color:var(--accent)] text-[color:var(--navy)] rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <h3 class="font-semibold text-[color:var(--navy)]">Comfortable Treatment</h3>
+                <p class="text-gray-600 text-sm">Receive treatment in our comfortable recliners with entertainment and refreshments.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-[color:var(--accent)] text-[color:var(--navy)] rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <h3 class="font-semibold text-[color:var(--navy)]">Monitoring & Support</h3>
+                <p class="text-gray-600 text-sm">Continuous monitoring by specialized oncology nurses throughout treatment.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-[color:var(--accent)] text-[color:var(--navy)] rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">4</div>
+              <div>
+                <h3 class="font-semibold text-[color:var(--navy)]">Recovery & Discharge</h3>
+                <p class="text-gray-600 text-sm">Post-treatment observation and discharge planning with follow-up instructions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="bg-[color:var(--navy)] text-white rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">Facility Features</h3>
+          <ul class="space-y-3 text-sm">
+            <li>🛏️ Private treatment bays</li>
+            <li>📺 Entertainment systems</li>
+            <li>🍽️ Complimentary refreshments</li>
+            <li>🚗 Convenient parking</li>
+            <li>👨‍👩‍👧‍👦 Family-friendly spaces</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h3 class="text-xl font-bold text-[color:var(--navy)] mb-4">What to Expect</h3>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 bg-gray-50 rounded">
+              <h4 class="font-semibold text-[color:var(--navy)]">Treatment Duration</h4>
+              <p class="text-gray-600">2-6 hours depending on therapy</p>
+            </div>
+            <div class="p-3 bg-gray-50 rounded">
+              <h4 class="font-semibold text-[color:var(--navy)]">Comfort Amenities</h4>
+              <p class="text-gray-600">Blankets, pillows, Wi-Fi access</p>
+            </div>
+            <div class="p-3 bg-gray-50 rounded">
+              <h4 class="font-semibold text-[color:var(--navy)]">Support Services</h4>
+              <p class="text-gray-600">Social work, nutrition counseling</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold text-[color:var(--navy)] mb-4">Schedule Treatment</h3>
+          <p class="text-gray-600 text-sm mb-4">Book your day care treatment appointment with our scheduling team.</p>
+          <a href="appointment.html" class="block w-full bg-[color:var(--accent)] text-[color:var(--navy)] text-center py-2 px-4 rounded-md font-semibold hover:bg-yellow-300 transition-colors">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div>
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto mb-4">
+      <h5 class="font-semibold">About MIOC</h5>
+      <p class="text-sm text-gray-600 mt-3">Committed to providing comprehensive cancer care with compassion and excellence.</p>
+    </div>
+    <div>
+      <h5 class="font-semibold">Quick Links</h5>
+      <ul class="mt-3 text-sm space-y-2 text-gray-600">
+        <li><a href="index.html" class="hover:text-[color:var(--navy)]">Home</a></li>
+        <li><a href="about.html" class="hover:text-[color:var(--navy)]">About Us</a></li>
+        <li><a href="services.html" class="hover:text-[color:var(--navy)]">Services</a></li>
+        <li><a href="doctors.html" class="hover:text-[color:var(--navy)]">Doctors</a></li>
+        <li><a href="contact.html" class="hover:text-[color:var(--navy)]">Contact</a></li>
+        <li><a href="appointment.html" class="hover:text-[color:var(--navy)]">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-semibold">Departments</h5>
+      <ul class="mt-3 text-sm space-y-2 text-gray-600">
+        <li>Medical Oncology</li>
+        <li>Radiation Oncology</li>
+        <li>Surgical Oncology</li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-semibold">Contact</h5>
+      <div class="text-sm text-gray-600 mt-3">
+        <p>123 Medical Center Drive<br/>Mumbai, Maharashtra 400001<br/>India</p>
+        <p class="mt-2">Phone: +91 22 2567 8900<br/>Emergency: +91 22 2567 8911<br/>Email: info@mioc.in</p>
+        <div class="flex space-x-3 mt-3">
+          <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
+          <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
+          <a href="#" class="text-pink-600 hover:text-pink-800">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t bg-white py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
+      <div>&copy; 2025 MIOC. All rights reserved.</div>
+      <div class="flex items-center space-x-3">
+        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACTS -->
+<div class="fixed right-4 bottom-24 space-y-3">
+  <a href="https://wa.me/" class="block bg-green-600 text-white p-3 rounded-full shadow">WA</a>
+  <a href="tel:+123456789" class="block bg-[color:var(--accent)] text-[color:var(--navy)] p-3 rounded-full shadow">Call</a>
+</div>
+
+<!-- Scripts -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const aboutBtn = document.getElementById('aboutDropdownBtn');
+    const aboutDropdown = document.getElementById('aboutDropdown');
+    
+    if (aboutBtn && aboutDropdown) {
+      aboutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !aboutDropdown.classList.contains('opacity-0');
+        
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesBtn = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
+        if (isVisible) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          aboutDropdown.classList.remove('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    const servicesBtn = document.getElementById('servicesDropdownBtn');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    
+    if (servicesBtn && servicesDropdown) {
+      servicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !servicesDropdown.classList.contains('opacity-0');
+        
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
+        if (isVisible) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          servicesDropdown.classList.remove('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

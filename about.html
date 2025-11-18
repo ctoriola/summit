@@ -54,7 +54,31 @@
             </div>
           </div>
         </div>
-        <a href="services.html" class="hover:underline">Services</a>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="doctors.html" class="hover:underline">Doctors</a>
         <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
@@ -75,9 +99,9 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-screen w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden flex flex-col">
   <!-- Sidebar Header -->
-  <div class="flex items-center justify-between p-6 border-b border-blue-700">
+  <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
     <div class="flex items-center space-x-3">
       <img src="assets/img/logo.png" alt="MIOC Logo" class="h-12 w-auto filter brightness-0 invert">
     </div>
@@ -101,45 +125,76 @@
 
       <!-- About Us Section -->
       <div class="space-y-2">
-        <div class="flex items-center space-x-2 px-3 py-2">
-          <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <button id="aboutToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
+          </div>
+          <svg id="aboutChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
-          <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
-        </div>
+        </button>
         
-        <!-- About Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
-          <a href="about.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">About Us</a>
-          <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
-        </div>
+        <div id="aboutContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <!-- About Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
+            <a href="about.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">About Us</a>
+            <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
+          </div>
 
-        <!-- Conference Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Conference</div>
-          <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
-          <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
-          <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
-          <a href="bowclc-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">BoWCLC-2024</a>
-        </div>
+          <!-- Conference Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Conference</div>
+            <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
+            <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
+            <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
+            <a href="bowclc-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">BoWCLC-2024</a>
+          </div>
 
-        <!-- Investor Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Investor</div>
-          <a href="corporate-filing.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Corporate Filing</a>
+          <!-- Investor Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Investor</div>
+            <a href="corporate-filing.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Corporate Filing</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="space-y-2">
+        <button id="servicesToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Services</span>
+          </div>
+          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Services</div>
+            <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Services</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Services</div>
+            <a href="chemotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Chemotherapy</a>
+            <a href="immunotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Immunotherapy</a>
+            <a href="targeted-therapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Targeted Therapy</a>
+            <a href="clinical-research.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Clinical Research</a>
+            <a href="palliative-care.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Palliative Care</a>
+            <a href="day-care-centre.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Day Care Centre</a>
+          </div>
         </div>
       </div>
 
       <!-- Main Navigation -->
       <div class="border-t border-blue-700 pt-6 space-y-2">
-        <a href="services.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-          </svg>
-          <span class="font-medium">Services</span>
-        </a>
-        
         <a href="doctors.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
           <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -481,6 +536,61 @@
       });
     }
 
+    // Sidebar collapsible sections
+    const aboutToggleBtn = document.getElementById('aboutToggleBtn');
+    const aboutContent = document.getElementById('aboutContent');
+    const aboutChevron = document.getElementById('aboutChevron');
+    
+    const servicesToggleBtn = document.getElementById('servicesToggleBtn');
+    const servicesContent = document.getElementById('servicesContent');
+    const servicesChevron = document.getElementById('servicesChevron');
+    
+    // Initialize sections as collapsed
+    if (aboutContent) {
+      aboutContent.style.maxHeight = '0px';
+      aboutContent.style.opacity = '0';
+    }
+    if (servicesContent) {
+      servicesContent.style.maxHeight = '0px';
+      servicesContent.style.opacity = '0';
+    }
+    
+    // About Us toggle functionality
+    if (aboutToggleBtn && aboutContent && aboutChevron) {
+      aboutToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = aboutContent.style.maxHeight !== '0px';
+        
+        if (isExpanded) {
+          aboutContent.style.maxHeight = '0px';
+          aboutContent.style.opacity = '0';
+          aboutChevron.style.transform = 'rotate(0deg)';
+        } else {
+          aboutContent.style.maxHeight = aboutContent.scrollHeight + 'px';
+          aboutContent.style.opacity = '1';
+          aboutChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+    
+    // Services toggle functionality
+    if (servicesToggleBtn && servicesContent && servicesChevron) {
+      servicesToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = servicesContent.style.maxHeight !== '0px';
+        
+        if (isExpanded) {
+          servicesContent.style.maxHeight = '0px';
+          servicesContent.style.opacity = '0';
+          servicesChevron.style.transform = 'rotate(0deg)';
+        } else {
+          servicesContent.style.maxHeight = servicesContent.scrollHeight + 'px';
+          servicesContent.style.opacity = '1';
+          servicesChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
     // About Us dropdown functionality
     const aboutBtn = document.getElementById('aboutDropdownBtn');
     const aboutDropdown = document.getElementById('aboutDropdown');
@@ -490,22 +600,59 @@
         e.preventDefault();
         const isVisible = !aboutDropdown.classList.contains('opacity-0');
         
+        // Close services dropdown if open
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesBtn = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
         if (isVisible) {
-          // Hide dropdown
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         } else {
-          // Show dropdown
           aboutDropdown.classList.remove('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(180deg)';
         }
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
         if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Services dropdown functionality
+    const servicesBtn = document.getElementById('servicesDropdownBtn');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    
+    if (servicesBtn && servicesDropdown) {
+      servicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !servicesDropdown.classList.contains('opacity-0');
+        
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
+        if (isVisible) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          servicesDropdown.classList.remove('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
       });
     }

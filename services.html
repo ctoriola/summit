@@ -52,7 +52,31 @@
             </div>
           </div>
         </div>
-        <a href="services.html" class="hover:underline text-[color:var(--accent)]">Services</a>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)]">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="doctors.html" class="hover:underline">Doctors</a>
         <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
