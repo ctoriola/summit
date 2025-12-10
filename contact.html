@@ -7,20 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --navy: #AA60C8;
-      --sky: #FFDFEF;
+      --navy: #dac1f1;
+      --sky: #dac1f1;
       --accent: #fbbf24;
-      --cta-green: #AA60C8;
+      --cta-green:#c39de6
     }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-[color:var(--navy)] text-white">
+<header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -66,7 +66,7 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700">
     <div class="flex items-center space-x-3">
@@ -170,16 +170,90 @@
 </section>
 
 <!-- HERO -->
-<section class="py-16 bg-gradient-to-r from-blue-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Contact Us</h1>
-    <p class="text-xl text-gray-600">We're here to help you on your healthcare journey</p>
+<section class="py-16 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 space-y-5">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Contact</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+        Contact Us
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+        We're here to help you on your healthcare journey.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
+          Appointments &amp; general enquiries
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
+          Emergency contact 24/7
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Send a message
+        </a>
+        <a href="tel:+912225678911" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          Call emergency line
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
+        <div class="mb-4">
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Quick contacts</div>
+          <div class="mt-1 text-sm text-gray-700">Reach us directly for appointments, emergencies or general information.</div>
+        </div>
+        <div class="space-y-4 text-sm text-gray-700">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Main line</div>
+              <div class="text-xs text-gray-500">General enquiries</div>
+              <div class="mt-1 text-sm">+91 22 2567 8900</div>
+            </div>
+            <a href="tel:+912225678900" class="text-xs font-semibold text-[color:var(--navy)] hover:underline">Call</a>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Appointments</div>
+              <div class="text-xs text-gray-500">Booking &amp; scheduling</div>
+              <div class="mt-1 text-sm">+91 22 2567 8920</div>
+            </div>
+            <a href="tel:+912225678920" class="text-xs font-semibold text-[color:var(--navy)] hover:underline">Call</a>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Emergency</div>
+              <div class="text-xs text-gray-500">24/7 emergency care</div>
+              <div class="mt-1 text-sm">+91 22 2567 8911</div>
+            </div>
+            <a href="tel:+912225678911" class="text-xs font-semibold text-red-600 hover:underline">Call 24/7</a>
+          </div>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Email</div>
+            <div class="mt-1 text-sm font-semibold text-gray-900 break-all">info@mioc.in</div>
+            <div class="mt-1 text-[11px] text-gray-500">For general queries</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Location</div>
+            <div class="mt-1 text-sm font-semibold text-gray-900">Mumbai, India</div>
+            <div class="mt-1 text-[11px] text-gray-500">123 Medical Center Drive</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT INFO & FORM -->
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-6">
+<section id="contact-form" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 bg-white rounded-2xl shadow-xl border border-gray-100">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       
       <!-- Contact Information -->
@@ -274,7 +348,7 @@
       </div>
 
       <!-- Contact Form -->
-      <div>
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
         <h2 class="text-3xl font-bold mb-8">Send us a Message</h2>
         
         <form class="space-y-6">
@@ -324,7 +398,7 @@
             </label>
           </div>
 
-          <button type="submit" class="w-full bg-[color:var(--navy)] text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-800 transition">
+          <button type="submit" class="w-full bg-[color:var(--navy)] text-white py-3 px-6 rounded-md font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200 hover:bg-blue-800">
             Send Message
           </button>
         </form>
@@ -335,11 +409,11 @@
 </section>
 
 <!-- MAP SECTION -->
-<section class="py-16 bg-[color:var(--sky)]">
+<section class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-8">Find Us</h2>
-    <div class="bg-white rounded-lg shadow-lg p-4">
-      <div class="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
+    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+      <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center">
         <p class="text-gray-600">Interactive Map Placeholder</p>
       </div>
       <div class="mt-4 text-center">

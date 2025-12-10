@@ -7,18 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --navy: #AA60C8;
+      --navy: #c39de6;
       --accent: #fbbf24;
+      --cta-green:#c39de6
     }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-[color:var(--navy)] text-white">
+<header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <div class="relative">
@@ -49,7 +50,31 @@
             </div>
           </div>
         </div>
-        <a href="services.html" class="hover:underline">Services</a>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="doctors.html" class="hover:underline">Doctors</a>
         <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
@@ -67,7 +92,7 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-screen w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden flex flex-col">
+<div id="mobileMenu" class="fixed top-0 left-0 h-screen w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden flex flex-col">
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
     <div class="flex items-center space-x-3">
@@ -202,19 +227,81 @@
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<main class="py-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-[color:var(--navy)] mb-6">SABCS 2024</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">San Antonio Breast Cancer Symposium - Advancing Breast Cancer Research and Treatment</p>
+<!-- HERO -->
+<section class="py-16 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 space-y-5">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Conference</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+        SABCS 2024
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+        San Antonio Breast Cancer Symposium - Advancing Breast Cancer Research and Treatment.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
+          Breast cancer research & treatment
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
+          Global scientific community
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="#mioc-presentations" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Explore presentations
+        </a>
+        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          Talk to our team
+        </a>
+      </div>
     </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
+        <div class="mb-4">
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Conference snapshot</div>
+          <div class="mt-1 text-sm text-gray-700">Key details for the San Antonio Breast Cancer Symposium 2024.</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Dates</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Dec 10– 13, 2024</div>
+            <div class="mt-1 text-[11px] text-gray-500">Henry B. González Center</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Location</div>
+            <div class="mt-1 text-base font-bold text-gray-900">San Antonio</div>
+            <div class="mt-1 text-[11px] text-gray-500">Texas, USA</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Focus</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Breast cancer</div>
+            <div class="mt-1 text-[11px] text-gray-500">Basic to clinical research</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">MIOC role</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Presenting</div>
+            <div class="mt-1 text-[11px] text-gray-500">Biomarkers, precision medicine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
 
     <div class="grid lg:grid-cols-3 gap-8">
       <!-- Event Details -->
       <div class="lg:col-span-2">
-        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Conference Overview</h2>
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Conference Overview</h2>
           <p class="text-gray-600 mb-6">The San Antonio Breast Cancer Symposium (SABCS) is the leading scientific conference for basic, translational, and clinical breast cancer research. MIOC is proud to participate in this premier event, showcasing our latest research and innovations in breast cancer treatment.</p>
           
           <div class="grid md:grid-cols-2 gap-6">
@@ -238,8 +325,8 @@
         </div>
 
         <!-- MIOC Presentations -->
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">MIOC Presentations</h2>
+        <div id="mioc-presentations" class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">MIOC Presentations</h2>
           <div class="space-y-6">
             <div class="border-l-4 border-[color:var(--accent)] pl-4">
               <h3 class="font-semibold text-[color:var(--navy)]">Novel Biomarkers in Triple-Negative Breast Cancer</h3>
@@ -262,7 +349,7 @@
 
       <!-- Sidebar -->
       <div>
-        <div class="bg-[color:var(--navy)] text-white rounded-lg p-6 mb-8">
+        <div class="bg-[color:var(--navy)] text-white rounded-2xl shadow-xl p-6 mb-8">
           <h3 class="text-xl font-bold mb-4">Quick Facts</h3>
           <ul class="space-y-3 text-sm">
             <li>🔬 World's largest breast cancer research conference</li>
@@ -273,10 +360,10 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6">
-          <h3 class="text-xl font-bold text-[color:var(--navy)] mb-4">Contact Our Team</h3>
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Our Team</h3>
           <p class="text-gray-600 text-sm mb-4">Meet with MIOC researchers and learn about our latest clinical trials.</p>
-          <a href="contact.html" class="block w-full bg-[color:var(--accent)] text-[color:var(--navy)] text-center py-2 px-4 rounded-md font-semibold hover:bg-yellow-300 transition-colors">Schedule Meeting</a>
+          <a href="contact.html" class="block w-full bg-[color:var(--accent)] text-[color:var(--navy)] text-center py-2 px-4 rounded-md font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200 hover:bg-yellow-300">Schedule Meeting</a>
         </div>
       </div>
     </div>
@@ -284,38 +371,36 @@
 </main>
 
 <!-- FOOTER (same as other pages) -->
-<footer class="bg-[color:var(--navy)] text-white py-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-4 gap-8">
-      <div class="md:col-span-2">
-        <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto filter brightness-0 invert mb-4">
-        <p class="text-gray-300 mb-4">Leading medical innovation and advancing patient care through cutting-edge research and clinical excellence.</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="about.html" class="text-gray-300 hover:text-white">About Us</a></li>
-          <li><a href="services.html" class="text-gray-300 hover:text-white">Services</a></li>
-          <li><a href="doctors.html" class="text-gray-300 hover:text-white">Our Doctors</a></li>
-          <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-        <div class="space-y-2 text-gray-300">
-          <p>📍 123 Medical Center Dr</p>
-          <p>📞 (555) 123-4567</p>
-          <p>✉️ info@mioc.com</p>
-        </div>
+<footer class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div class="md:col-span-2">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto mb-4">
+      <p class="text-sm text-gray-600 mb-4">Leading medical innovation and advancing patient care through cutting-edge research and clinical excellence.</p>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="about.html" class="hover:text-[color:var(--navy)]">About Us</a></li>
+        <li><a href="services.html" class="hover:text-[color:var(--navy)]">Services</a></li>
+        <li><a href="doctors.html" class="hover:text-[color:var(--navy)]">Our Doctors</a></li>
+        <li><a href="contact.html" class="hover:text-[color:var(--navy)]">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+      <div class="space-y-2 text-sm text-gray-600">
+        <p>📍 123 Medical Center Dr</p>
+        <p>📞 (555) 123-4567</p>
+        <p>✉️ info@mioc.com</p>
       </div>
     </div>
-    <div class="border-t border-gray-700 mt-8 pt-8">
-      <div class="flex items-center justify-between text-sm text-gray-300">
-        <p>&copy; 2025 MIOC. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-white">Privacy Policy</a>
-          <a href="#" class="hover:text-white">Terms of Service</a>
-        </div>
+  </div>
+  <div class="border-t bg-white py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
+      <p>&copy; 2025 MIOC. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -436,11 +521,21 @@
     // About Us dropdown functionality
     const aboutBtn = document.getElementById('aboutDropdownBtn');
     const aboutDropdown = document.getElementById('aboutDropdown');
+
+    // Services dropdown functionality
+    const servicesBtn = document.getElementById('servicesDropdownBtn');
+    const servicesDropdown = document.getElementById('servicesDropdown');
     
     if (aboutBtn && aboutDropdown) {
       aboutBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const isVisible = !aboutDropdown.classList.contains('opacity-0');
+
+        // Close services dropdown if open
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
         
         if (isVisible) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
@@ -455,6 +550,34 @@
         if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    if (servicesBtn && servicesDropdown) {
+      servicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !servicesDropdown.classList.contains('opacity-0');
+
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        if (isVisible) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          servicesDropdown.classList.remove('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
       });
     }

@@ -7,19 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --navy: #AA60C8;
+      --navy: #c39de6;
       --accent: #fbbf24;
-      --cta-green: #AA60C8;
+      --cta-green: #c39de6;
     }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-[color:var(--navy)] text-white">
+<header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -65,7 +65,7 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700">
     <div class="flex items-center space-x-3">
@@ -169,27 +169,92 @@
 </section>
 
 <!-- HERO -->
-<section class="py-16 bg-gradient-to-r from-blue-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Our Expert Team</h1>
-    <p class="text-xl text-gray-600">Meet our world-class oncologists and specialists</p>
+<section class="py-16 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 space-y-5">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Doctors</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+        Our expert team
+        <br class="hidden sm:inline" />
+        behind every treatment plan
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+        Meet our world-class oncologists and specialists who work together in multidisciplinary tumor boards to design individualized treatment plans.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
+          Medical, surgical, radiation oncology & hematology
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
+          Multidisciplinary tumor boards
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="appointment.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Book an appointment
+        </a>
+        <a href="services.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          Explore our services
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
+        <div class="mb-4">
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Clinical leadership</div>
+          <div class="mt-1 text-sm text-gray-700">Experienced oncologists coordinating care across specialties.</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Experience</div>
+            <div class="mt-1 text-base font-bold text-gray-900">10+ yrs</div>
+            <div class="mt-1 text-[11px] text-gray-500">Average consultant experience</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Team</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Multidisciplinary</div>
+            <div class="mt-1 text-[11px] text-gray-500">Joint tumor boards</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Focus</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Site-specific</div>
+            <div class="mt-1 text-[11px] text-gray-500">Disease-wise expertise</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Support</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Whole-person</div>
+            <div class="mt-1 text-[11px] text-gray-500">Clinical + supportive care</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- DOCTORS GRID -->
-<section class="py-16">
+<section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Clinical team</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Our doctors at MIOC</h2>
+      <p class="mt-3 text-sm sm:text-base text-gray-600">Meet the multidisciplinary team of medical, surgical, radiation oncologists and hematologists who guide your care.</p>
+    </div>
+
     <!-- Medical Oncology -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">Medical Oncology</h2>
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Medical Oncology</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1594824475317-8b7d0e8e4b1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Sarah Johnson" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Sarah Johnson</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Sarah Johnson</h3>
           <p class="text-[color:var(--navy)] font-semibold">Senior Medical Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, AIIMS Delhi</p>
           <p class="text-sm text-gray-600">15+ years experience</p>
@@ -197,14 +262,14 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Breast Cancer, Lung Cancer, Immunotherapy</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Rajesh Gupta" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Rajesh Gupta</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Rajesh Gupta</h3>
           <p class="text-[color:var(--navy)] font-semibold">Medical Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, PGI Chandigarh</p>
           <p class="text-sm text-gray-600">12+ years experience</p>
@@ -212,14 +277,14 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">GI Cancers, Precision Medicine</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Priya Sharma" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Priya Sharma</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Priya Sharma</h3>
           <p class="text-[color:var(--navy)] font-semibold">Medical Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, CMC Vellore</p>
           <p class="text-sm text-gray-600">10+ years experience</p>
@@ -227,22 +292,22 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Gynecologic Oncology, Clinical Trials</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
       </div>
     </div>
 
     <!-- Radiation Oncology -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">Radiation Oncology</h2>
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Radiation Oncology</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Michael Chen" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Michael Chen</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Michael Chen</h3>
           <p class="text-[color:var(--navy)] font-semibold">Senior Radiation Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DNB Radiation Oncology</p>
           <p class="text-sm text-gray-600">14+ years experience</p>
@@ -250,14 +315,14 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">IMRT, VMAT, Stereotactic Radiosurgery</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Anjali Patel" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Anjali Patel</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Anjali Patel</h3>
           <p class="text-[color:var(--navy)] font-semibold">Radiation Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DNB Radiation Oncology</p>
           <p class="text-sm text-gray-600">8+ years experience</p>
@@ -265,22 +330,22 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Brachytherapy, Pediatric Radiation</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
       </div>
     </div>
 
     <!-- Surgical Oncology -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">Surgical Oncology</h2>
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Surgical Oncology</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emily Rodriguez" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Emily Rodriguez</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Emily Rodriguez</h3>
           <p class="text-[color:var(--navy)] font-semibold">Senior Surgical Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MS, MCh Surgical Oncology</p>
           <p class="text-sm text-gray-600">18+ years experience</p>
@@ -288,14 +353,14 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Robotic Surgery, Complex Resections</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Vikram Singh" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. Vikram Singh</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Vikram Singh</h3>
           <p class="text-[color:var(--navy)] font-semibold">Surgical Oncologist</p>
           <p class="text-sm text-gray-600 mt-2">MS, MCh Surgical Oncology</p>
           <p class="text-sm text-gray-600">12+ years experience</p>
@@ -303,22 +368,22 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Hepatobiliary Surgery, GI Oncology</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
       </div>
     </div>
 
     <!-- Hematology -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">Hematology & BMT</h2>
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Hematology &amp; BMT</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
           <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. David Kumar" class="w-full h-full object-cover">
           </div>
-          <h3 class="text-xl font-bold">Dr. David Kumar</h3>
+          <h3 class="text-xl font-bold text-gray-900">Dr. David Kumar</h3>
           <p class="text-[color:var(--navy)] font-semibold">Senior Hematologist</p>
           <p class="text-sm text-gray-600 mt-2">MD, DM Hematology</p>
           <p class="text-sm text-gray-600">16+ years experience</p>
@@ -326,8 +391,8 @@
             <p class="text-xs text-gray-500">Specializes in:</p>
             <p class="text-sm">Leukemia, Lymphoma, BMT</p>
           </div>
-          <button class="mt-4 bg-[color:var(--cta-green)] text-white px-4 py-2 rounded text-sm">Book Appointment</button>
-        </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
       </div>
     </div>
@@ -336,11 +401,17 @@
 </section>
 
 <!-- CTA -->
-<section class="py-16 bg-[color:var(--navy)] text-white text-center">
+<section class="py-16 bg-[color:var(--navy)] text-white">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-4">Schedule a Consultation</h2>
-    <p class="text-xl mb-8">Our expert team is ready to provide you with personalized care</p>
-    <a href="appointment.html" class="bg-[color:var(--accent)] text-navy-900 px-8 py-3 rounded-md font-semibold">Book Appointment</a>
+    <div class="bg-white/5 rounded-3xl border border-white/20 px-6 py-10 sm:px-10 text-center shadow-xl">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">Next step</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold mb-3">Schedule a Consultation</h2>
+      <p class="text-sm sm:text-base mb-8 text-white/90">Our expert team is ready to provide you with personalized care</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="appointment.html" class="inline-flex items-center justify-center bg-[color:var(--accent)] text-[color:var(--navy)] px-8 py-3 rounded-md font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        <a href="contact.html" class="inline-flex items-center justify-center border border-white/70 text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[color:var(--navy)] transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
   </div>
 </section>
 

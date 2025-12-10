@@ -7,20 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
-      --navy:#AA60C8;
+      --navy:#c39de6;
       --sky:#EABDE6;
       --accent:#fbbf24;
-      --cta-green:#28a745;
+      --cta-green:#c39de6
     }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-[color:var(--navy)] text-white">
+<header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -67,12 +67,12 @@
               </div>
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
-                <a href="#" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700">
     <div class="flex items-center space-x-3">
@@ -194,124 +194,218 @@
 </section>
 
 <!-- HERO -->
-<section class="py-16 bg-gradient-to-r from-blue-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Our Services</h1>
-    <p class="text-xl text-gray-600">Comprehensive cancer care services delivered by expert multidisciplinary teams</p>
+<section class="py-16 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 space-y-5">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Services</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+        Comprehensive cancer
+        <br class="hidden sm:inline" />
+        treatment under one roof
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+        Comprehensive cancer care services delivered by expert multidisciplinary teams across medical, surgical, radiation oncology and supportive care.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
+          Medical, surgical & radiation oncology
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
+          Diagnostics & supportive care
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="appointment.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Schedule consultation
+        </a>
+        <a href="doctors.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          Meet our specialists
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
+        <div class="mb-4">
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Key service areas</div>
+          <div class="mt-1 text-sm text-gray-700">A snapshot of how our core oncology services work together.</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Treatment</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Medical</div>
+            <div class="mt-1 text-[11px] text-gray-500">Chemo, immuno, targeted</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Precision</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Radiation</div>
+            <div class="mt-1 text-[11px] text-gray-500">IMRT, VMAT, stereotactic</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Surgery</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Oncology</div>
+            <div class="mt-1 text-[11px] text-gray-500">Robotic & minimally invasive</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Support</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Holistic</div>
+            <div class="mt-1 text-[11px] text-gray-500">Pain, nutrition, counseling</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- MAIN SERVICES -->
-<section class="py-16">
+<section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Core clinical services</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Oncology services at MIOC</h2>
+      <p class="mt-3 text-sm sm:text-base text-gray-600">Integrated medical, surgical and radiation oncology supported by diagnostics and comprehensive supportive care.</p>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">🏥</div>
-        <h3 class="text-xl font-bold mb-3">Medical Oncology</h3>
-        <p class="text-gray-600 mb-4">Chemotherapy, immunotherapy, targeted therapy, and hormonal treatments</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• Systemic cancer treatments</li>
-          <li>• Clinical trial participation</li>
-          <li>• Personalized medicine</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🏥</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Medical Oncology</h3>
+          <p class="text-gray-600 mb-4">Chemotherapy, immunotherapy, targeted therapy, and hormonal treatments</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Systemic cancer treatments</li>
+            <li>• Clinical trial participation</li>
+            <li>• Personalized medicine</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">⚡</div>
-        <h3 class="text-xl font-bold mb-3">Radiation Oncology</h3>
-        <p class="text-gray-600 mb-4">Advanced radiation therapy techniques for precise tumor targeting</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• IMRT & VMAT</li>
-          <li>• Stereotactic radiosurgery</li>
-          <li>• Brachytherapy</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Radiation Oncology</h3>
+          <p class="text-gray-600 mb-4">Advanced radiation therapy techniques for precise tumor targeting</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• IMRT & VMAT</li>
+            <li>• Stereotactic radiosurgery</li>
+            <li>• Brachytherapy</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">🔬</div>
-        <h3 class="text-xl font-bold mb-3">Surgical Oncology</h3>
-        <p class="text-gray-600 mb-4">Minimally invasive and robotic surgical procedures</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• Robotic surgery</li>
-          <li>• Laparoscopic procedures</li>
-          <li>• Complex tumor resections</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🔬</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Surgical Oncology</h3>
+          <p class="text-gray-600 mb-4">Minimally invasive and robotic surgical procedures</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Robotic surgery</li>
+            <li>• Laparoscopic procedures</li>
+            <li>• Complex tumor resections</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">🩸</div>
-        <h3 class="text-xl font-bold mb-3">Hematology</h3>
-        <p class="text-gray-600 mb-4">Blood cancer diagnosis and treatment including bone marrow transplants</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• Leukemia treatment</li>
-          <li>• Lymphoma care</li>
-          <li>• Stem cell transplant</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🩸</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Hematology</h3>
+          <p class="text-gray-600 mb-4">Blood cancer diagnosis and treatment including bone marrow transplants</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Leukemia treatment</li>
+            <li>• Lymphoma care</li>
+            <li>• Stem cell transplant</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">🧬</div>
-        <h3 class="text-xl font-bold mb-3">Diagnostic Services</h3>
-        <p class="text-gray-600 mb-4">Advanced imaging and laboratory diagnostics</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• PET-CT scanning</li>
-          <li>• Molecular diagnostics</li>
-          <li>• Pathology services</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🧬</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Diagnostic Services</h3>
+          <p class="text-gray-600 mb-4">Advanced imaging and laboratory diagnostics</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• PET-CT scanning</li>
+            <li>• Molecular diagnostics</li>
+            <li>• Pathology services</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <div class="text-4xl mb-4">🤝</div>
-        <h3 class="text-xl font-bold mb-3">Supportive Care</h3>
-        <p class="text-gray-600 mb-4">Comprehensive support services for patients and families</p>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li>• Pain management</li>
-          <li>• Nutritional counseling</li>
-          <li>• Psychological support</li>
-        </ul>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Supportive Care</h3>
+          <p class="text-gray-600 mb-4">Comprehensive support services for patients and families</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Pain management</li>
+            <li>• Nutritional counseling</li>
+            <li>• Psychological support</li>
+          </ul>
+        </div>
+      </article>
 
     </div>
   </div>
 </section>
 
 <!-- SPECIALIZED PROGRAMS -->
-<section class="py-16 bg-[color:var(--sky)]">
+<section class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Specialized Programs</h2>
+    <div class="text-center mb-10 max-w-2xl mx-auto">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Disease-focused care</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Specialized Programs</h2>
+      <p class="mt-3 text-sm sm:text-base text-gray-600">Dedicated programs that bring together specialists, diagnostics and supportive services around specific cancer types.</p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
-      <div class="bg-white rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-3">Breast Cancer Program</h3>
-        <p class="text-gray-600">Comprehensive breast cancer care from screening to survivorship</p>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Breast Cancer Program</h3>
+          <p class="text-gray-600">Comprehensive breast cancer care from screening to survivorship</p>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-3">Lung Cancer Program</h3>
-        <p class="text-gray-600">Advanced lung cancer treatments including targeted therapy</p>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Lung Cancer Program</h3>
+          <p class="text-gray-600">Advanced lung cancer treatments including targeted therapy</p>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-3">Gastrointestinal Program</h3>
-        <p class="text-gray-600">Specialized care for digestive system cancers</p>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Gastrointestinal Program</h3>
+          <p class="text-gray-600">Specialized care for digestive system cancers</p>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-3">Pediatric Oncology</h3>
-        <p class="text-gray-600">Dedicated childhood cancer care with family support</p>
-      </div>
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Pediatric Oncology</h3>
+          <p class="text-gray-600">Dedicated childhood cancer care with family support</p>
+        </div>
+      </article>
 
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-16 bg-[color:var(--navy)] text-white text-center">
+<section class="py-16 bg-[color:var(--navy)] text-white">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-4">Need More Information?</h2>
-    <p class="text-xl mb-8">Our specialists are here to help you understand your treatment options</p>
-    <a href="appointment.html" class="bg-[color:var(--accent)] text-navy-900 px-8 py-3 rounded-md font-semibold">Schedule Consultation</a>
+    <div class="bg-white/5 rounded-3xl border border-white/20 px-6 py-10 sm:px-10 text-center shadow-xl">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">Next step</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold mb-3">Need More Information?</h2>
+      <p class="text-sm sm:text-base mb-8 text-white/90">Our specialists are here to help you understand your treatment options and recommend the right combination of services for you.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="appointment.html" class="inline-flex items-center justify-center bg-[color:var(--accent)] text-[color:var(--navy)] px-8 py-3 rounded-md font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Schedule Consultation</a>
+        <a href="contact.html" class="inline-flex items-center justify-center border border-white/70 text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[color:var(--navy)] transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
   </div>
 </section>
 

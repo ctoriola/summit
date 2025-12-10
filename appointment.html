@@ -7,20 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --navy: #AA60C8;
-      --sky: #FFDFEF;
+      --navy: #c39de6;
+      --sky: #dac1f1;
       --accent: #fbbf24;
-      --cta-green: #AA60C8;
+      --cta-green: #c39de6;
     }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-[color:var(--navy)] text-white">
+<header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -64,7 +64,7 @@
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-[color:var(--navy)] to-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700">
     <div class="flex items-center space-x-3">
@@ -168,19 +168,90 @@
 </section>
 
 <!-- HERO -->
-<section class="py-16 bg-gradient-to-r from-blue-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Book Your Appointment</h1>
-    <p class="text-xl text-gray-600">Schedule a consultation with our expert oncology team</p>
+<section class="py-16 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 space-y-5">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Appointment</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+        Book Your Appointment
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+        Schedule a consultation with our expert oncology team.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
+          New patient &amp; follow-up visits
+        </div>
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
+          In-person &amp; tele-consult options
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="#appointment-form" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Start booking
+        </a>
+        <a href="doctors.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          View doctors
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
+        <div class="mb-4">
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">How it works</div>
+          <div class="mt-1 text-sm text-gray-700">Share a few details, pick a preferred slot, and our coordinators will confirm your visit.</div>
+        </div>
+        <ol class="space-y-3 text-sm text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 h-6 w-6 rounded-full bg-[color:var(--navy)] text-white text-xs flex items-center justify-center font-semibold">1</span>
+            <div>
+              <div class="font-semibold">Tell us about you</div>
+              <div class="text-xs text-gray-500">Patient and contact information</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 h-6 w-6 rounded-full bg-[color:var(--navy)] text-white text-xs flex items-center justify-center font-semibold">2</span>
+            <div>
+              <div class="font-semibold">Choose your preferences</div>
+              <div class="text-xs text-gray-500">Location, doctor, and appointment type</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 h-6 w-6 rounded-full bg-[color:var(--navy)] text-white text-xs flex items-center justify-center font-semibold">3</span>
+            <div>
+              <div class="font-semibold">Submit for confirmation</div>
+              <div class="text-xs text-gray-500">Our team calls you back within 24 hours</div>
+            </div>
+          </li>
+        </ol>
+        <div class="mt-5 grid grid-cols-2 gap-3 text-xs">
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Average response</div>
+            <div class="mt-1 text-base font-bold text-gray-900">&lt; 24 hours</div>
+            <div class="mt-1 text-[11px] text-gray-500">For all online requests</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Support</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Dedicated team</div>
+            <div class="mt-1 text-[11px] text-gray-500">To help with scheduling &amp; queries</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- APPOINTMENT FORM -->
-<section class="py-16">
+<section id="appointment-form" class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-6">
     
     <!-- Progress Steps -->
-    <div class="mb-12">
+    <div class="mb-12 bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
       <div class="flex items-center justify-center space-x-4">
         <div class="flex items-center">
           <div class="w-8 h-8 bg-[color:var(--navy)] text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
@@ -200,7 +271,7 @@
     </div>
 
     <!-- Form -->
-    <form class="bg-white rounded-lg shadow-lg p-8">
+    <form class="bg-white rounded-xl shadow-xl border border-gray-100 p-8">
       
       <!-- Patient Information -->
       <div class="mb-8">
