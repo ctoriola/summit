@@ -253,17 +253,11 @@
       <div class="lg:col-span-2">
         <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Featured Posts</h2>
-          <article class="mb-6">
-            <h3 class="font-semibold text-[color:var(--navy)]">Early Detection: What You Need to Know</h3>
-            <p class="text-gray-600 text-sm mt-2">A practical guide on screening schedules and recognising early warning signs.</p>
-            <a href="#" class="inline-block mt-3 text-sm text-[color:var(--navy)] hover:underline">Read more →</a>
-          </article>
-
-          <article class="mb-6">
-            <h3 class="font-semibold text-[color:var(--navy)]">Nutrition During Treatment</h3>
-            <p class="text-gray-600 text-sm mt-2">Evidence-based strategies to maintain strength and wellbeing through therapy.</p>
-            <a href="#" class="inline-block mt-3 text-sm text-[color:var(--navy)] hover:underline">Read more →</a>
-          </article>
+          <div id="featuredPostsContainer">
+            <div class="text-center py-8">
+              <p class="text-gray-600">Loading featured posts...</p>
+            </div>
+          </div>
 
           <div class="mt-8 border-t pt-6">
             <h4 class="font-semibold">Browse by Topic</h4>
@@ -661,6 +655,72 @@
 
 <!-- Animation and Scroll Effects Script -->
 <script>
+  // Supabase Configuration
+  const SUPABASE_URL = 'https://pidvfucnzlqujffxnrxt.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_cEz9DOMgH63O4jGij3b4YQ_q9IwHwFK';
+
+  // Load featured posts (last 3 blog posts)
+  async function loadFeaturedPosts() {
+    try {
+      const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/posts?select=*&published=eq.true&order=created_at.desc&limit=3`,
+        {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch posts');
+      }
+
+      const posts = await response.json();
+      displayFeaturedPosts(posts);
+    } catch (error) {
+      console.error('Error loading featured posts:', error);
+      const container = document.getElementById('featuredPostsContainer');
+      if (container) {
+        container.innerHTML = '<p class="text-gray-600">Unable to load featured posts at this time.</p>';
+      }
+    }
+  }
+
+  // Display featured posts
+  function displayFeaturedPosts(posts) {
+    const container = document.getElementById('featuredPostsContainer');
+    if (!container) return;
+
+    if (posts.length === 0) {
+      container.innerHTML = '<p class="text-gray-600">No featured posts available yet.</p>';
+      return;
+    }
+
+    const html = posts.map((post, index) => `
+      <article class="${index < posts.length - 1 ? 'mb-6 pb-6 border-b' : 'mb-6'}">
+        <h3 class="font-semibold text-[color:var(--navy)]">${escapeHtml(post.title)}</h3>
+        <p class="text-gray-600 text-sm mt-2">${escapeHtml(post.excerpt)}</p>
+        <div class="text-xs text-gray-500 mt-2">
+          By ${escapeHtml(post.author)} • ${new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+        </div>
+        <a href="blog.html" class="inline-block mt-3 text-sm text-[color:var(--navy)] hover:underline">Read more →</a>
+      </article>
+    `).join('');
+
+    container.innerHTML = html;
+  }
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Load featured posts when page loads
+  loadFeaturedPosts();
+
   document.addEventListener('DOMContentLoaded', function() {
     
     // Scroll Reveal Animation

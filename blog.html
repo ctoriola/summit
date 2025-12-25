@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Summit Medical Services - Cancer Awareness & Treatment Articles</title>
+  <meta name="description" content="Read our latest cancer awareness, treatment options, and wellness blog posts from Summit Medical Services experts.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom palette to mirror index.html */
+    :root {
+      --navy: #1e3a8a;
+      --sky:#dac1f1;   /* pale section */
+      --accent:#ffd24d; /* yellow CTA */
+      --cta-green:#c39de6; /* green CTA used in hero */
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .blog-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 220px;
+      background: #f3f4f6;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card-content {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .blog-card-badge {
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-card-badge.published {
+      background: #c39de6;
+      color: white;
+    }
+
+    .blog-card-badge.draft {
+      background: #ffd24d;
+      color: var(--navy);
+    }
+
+    .blog-card-date {
+      color: #9ca3af;
+    }
+
+    .blog-card-title {
+      color: var(--navy);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .blog-card-excerpt {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: auto;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-footer {
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blog-card-author {
+      font-size: 0.875rem;
+    }
+
+    .blog-card-author-name {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .blog-card-category {
+      display: inline-block;
+      padding: 0.375rem 0.75rem;
+      background: #f3f4f6;
+      color: var(--navy);
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Empty State */
+    .blog-empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f9fafb;
+      border: 2px dashed #d1d5db;
+      border-radius: 0.75rem;
+    }
+
+    .blog-empty p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    /* Loading State */
+    .blog-loading {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .blog-loading p {
+      color: var(--navy);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .blog-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .blog-modal.active {
+      display: flex;
+    }
+
+    .blog-modal-content {
+      background: white;
+      border-radius: 0.75rem;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .blog-modal-header {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .blog-modal-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .blog-modal-close:hover {
+      background: #f3f4f6;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-modal-body {
+      padding: 2rem;
+    }
+
+    .blog-modal-title {
+      color: var(--navy);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .blog-modal-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-modal-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-modal-meta-label {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .blog-modal-meta-value {
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .blog-modal-excerpt {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      padding: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .blog-modal-content-text {
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .blog-modal-content-text h2 {
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-modal-content-text h3 {
+      color: var(--navy);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-modal-content-text p {
+      margin-bottom: 1rem;
+    }
+
+    .blog-modal-content-text ul,
+    .blog-modal-content-text ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-modal-content-text li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-header h1 {
+        font-size: 2rem;
+      }
+
+      .blog-modal-title {
+        font-size: 1.5rem;
+      }
+
+      .blog-modal-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+
+<!-- HEADER -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm text-gray-900 border-b border-gray-200 transition-shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center justify-between flex-1">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-20 w-auto">
+      <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
+        <a href="index.html" class="hover:underline">Home</a>
+        <div class="relative">
+          <button id="aboutDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>About Us</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="aboutDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-3 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
+                <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
+                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Workshops</div>
+                <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
+                <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
+                <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
+                <a href="bowclc-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">BoWCLC-2024</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Investor</div>
+                <a href="corporate-filing.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Corporate Filing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="cancerDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Cancer Types</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="cancerDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Cancer Types</div>
+                <a href="cancer-types.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Cancer Types</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Cancer</div>
+                <a href="breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer</a>
+                <a href="brain-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Lung Cancer</a>
+                <a href="prostate-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gastrointestinal Cancers</a>
+                <a href="kidney-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gynecological Cancers</a>
+                <a href="blood-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Genitourinary Cancers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="awarenessDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Awareness</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="awarenessDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Awareness</div>
+                <a href="awareness-blogs.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Blogs</a>
+                <a href="awareness-cancer-myths.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Cancer &amp; Myths</a>
+                <a href="awareness-campaigns.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Awareness Campaigns</a>
+                <a href="awareness-breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer Awareness</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Resources</div>
+                <a href="awareness-newsletter.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Newsletter</a>
+                <a href="awareness-hpv-vaccination.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">HPV Vaccination</a>
+                <a href="awareness-joint-advisory.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Joint Advisory For Cancer Patients</a>
+                <a href="awareness-stories-of-resilience.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Stories of Resilience</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
+
+<!-- Mobile Menu Sidebar -->
+<div id="mobileMenu" class="fixed top-0 left-0 h-screen w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden flex flex-col">
+  <!-- Sidebar Header -->
+  <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
+    <div class="flex items-center space-x-3">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-12 w-auto filter brightness-0 invert">
+    </div>
+    <button id="closeSidebarBtn" class="p-2 hover:bg-blue-800 rounded-lg transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="flex-1 overflow-y-auto p-6">
+    <div class="space-y-6">
+      <!-- About Us Section -->
+      <div class="space-y-2">
+        <button id="aboutToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
+          </div>
+          <svg id="aboutChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div id="aboutContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
+            <a href="about.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">About Us</a>
+            <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Workshops</div>
+            <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
+            <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
+            <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
+            <a href="bowclc-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">BoWCLC-2024</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Investor</div>
+            <a href="corporate-filing.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Corporate Filing</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="space-y-2">
+        <button id="servicesToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Services</span>
+          </div>
+          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Services</div>
+            <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Services</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Services</div>
+            <a href="chemotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Chemotherapy</a>
+            <a href="immunotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Immunotherapy</a>
+            <a href="targeted-therapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Targeted Therapy</a>
+            <a href="clinical-research.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Clinical Research</a>
+            <a href="palliative-care.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Palliative Care</a>
+            <a href="day-care-centre.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Day Care Centre</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancer Types Section -->
+      <div class="space-y-2">
+        <button id="cancerToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3 0 1.306.835 2.418 2 2.83V17a1 1 0 102 0v-3.17A3.001 3.001 0 0015 11c0-1.657-1.343-3-3-3z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Cancer Types</span>
+          </div>
+          <svg id="cancerChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="cancerContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Cancer Types</div>
+            <a href="cancer-types.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer Types</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Cancer</div>
+            <a href="breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer</a>
+            <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Lung Cancer</a>
+            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gastrointestinal Cancers</a>
+            <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gynecological Cancers</a>
+            <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Genitourinary Cancers</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awareness Section -->
+      <div class="space-y-2">
+        <button id="awarenessToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Awareness</span>
+          </div>
+          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Awareness</div>
+            <a href="awareness-blogs.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blogs</a>
+            <a href="awareness-cancer-myths.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer &amp; Myths</a>
+            <a href="awareness-campaigns.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Awareness Campaigns</a>
+            <a href="awareness-breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer Awareness</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Resources</div>
+            <a href="awareness-newsletter.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Newsletter</a>
+            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">HPV Vaccination</a>
+            <a href="awareness-joint-advisory.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Joint Advisory For Cancer Patients</a>
+            <a href="awareness-stories-of-resilience.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Stories of Resilience</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-blue-700 pt-6 space-y-2">
+        <a href="contact.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
+          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="font-medium">Contact</span>
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="pt-6">
+        <a href="appointment.html" class="flex items-center justify-center space-x-2 w-full bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors shadow-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span>Book Appointment</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="antialiased text-gray-800 bg-white">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <!-- Blog Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-[color:var(--navy)] mb-4">Blog & Resources</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Stay informed with our latest articles on cancer awareness, treatment options, and wellness.</p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div id="blogList" class="blog-grid">
+      <div class="blog-loading">
+        <p>Loading blog posts...</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Blog Modal -->
+<div id="blogModal" class="blog-modal">
+  <div class="blog-modal-content">
+    <div class="blog-modal-header">
+      <img id="modalImage" class="blog-modal-image" alt="">
+      <button class="blog-modal-close" onclick="closeBlogModal()">&times;</button>
+    </div>
+    <div class="blog-modal-body">
+      <h1 class="blog-modal-title" id="modalTitle"></h1>
+      <div class="blog-modal-meta">
+        <div class="blog-modal-meta-item">
+          <span class="blog-modal-meta-label">Author</span>
+          <span class="blog-modal-meta-value" id="modalAuthor"></span>
+        </div>
+        <div class="blog-modal-meta-item">
+          <span class="blog-modal-meta-label">Category</span>
+          <span class="blog-modal-meta-value" id="modalCategory"></span>
+        </div>
+        <div class="blog-modal-meta-item">
+          <span class="blog-modal-meta-label">Published</span>
+          <span class="blog-modal-meta-value" id="modalDate"></span>
+        </div>
+      </div>
+      <div class="blog-modal-excerpt" id="modalExcerpt"></div>
+      <div class="blog-modal-content-text" id="modalContent"></div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Supabase Configuration
+    const SUPABASE_URL = 'https://pidvfucnzlqujffxnrxt.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_cEz9DOMgH63O4jGij3b4YQ_q9IwHwFK';
+
+    // Fetch published posts from Supabase
+    async function loadBlogPosts() {
+      try {
+        const response = await fetch(
+          `${SUPABASE_URL}/rest/v1/posts?select=*&published=eq.true&order=created_at.desc`,
+          {
+            headers: {
+              'apikey': SUPABASE_ANON_KEY,
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+
+        const posts = await response.json();
+        displayBlogPosts(posts);
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+        const blogList = document.getElementById('blogList');
+        blogList.innerHTML = '<div class="blog-empty"><p>Unable to load blog posts. Please try again later.</p></div>';
+      }
+    }
+
+    // Display blog posts
+    function displayBlogPosts(posts) {
+      const blogList = document.getElementById('blogList');
+
+      if (posts.length === 0) {
+        blogList.innerHTML = '<div class="blog-empty"><p>No blog posts available yet.</p></div>';
+        return;
+      }
+
+      blogList.innerHTML = posts.map(post => `
+        <div class="blog-card" onclick="openBlogModal('${post.id}', '${escapeHtml(post.title)}', '${escapeHtml(post.excerpt)}', '${escapeHtml(post.content)}', '${post.author}', '${post.category}', '${post.image_url || ''}', '${post.created_at}')">
+          ${post.image_url ? `<div class="blog-card-image"><img src="${post.image_url}" alt="${escapeHtml(post.title)}" onerror="this.src='https://via.placeholder.com/400x220?text=Blog'"></div>` : ''}
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-card-badge published">Published</span>
+              <span class="blog-card-date">${new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+            </div>
+            <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
+            <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                By <span class="blog-card-author-name">${escapeHtml(post.author)}</span>
+              </div>
+              <span class="blog-card-category">${escapeHtml(post.category)}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Open blog modal
+    function openBlogModal(id, title, excerpt, content, author, category, imageUrl, createdAt) {
+      const modal = document.getElementById('blogModal');
+      document.getElementById('modalImage').src = imageUrl || 'https://via.placeholder.com/800x400?text=Blog';
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalAuthor').textContent = author;
+      document.getElementById('modalCategory').textContent = category;
+      document.getElementById('modalDate').textContent = new Date(createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('modalExcerpt').textContent = excerpt;
+      document.getElementById('modalContent').innerHTML = content;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close blog modal
+    function closeBlogModal() {
+      const modal = document.getElementById('blogModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('blogModal')?.addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeBlogModal();
+      }
+    });
+
+    // Escape key to close modal
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeBlogModal();
+      }
+    });
+
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Load posts on page load
+    loadBlogPosts();
+
+    // Dropdown functionality
+    function setupDropdown(buttonId, dropdownId) {
+      const button = document.getElementById(buttonId);
+      const dropdown = document.getElementById(dropdownId);
+
+      if (!button || !dropdown) return;
+
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('opacity-0');
+        dropdown.classList.toggle('invisible');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('opacity-0');
+          dropdown.classList.add('invisible');
+        }
+      });
+    }
+
+    setupDropdown('aboutDropdownBtn', 'aboutDropdown');
+    setupDropdown('servicesDropdownBtn', 'servicesDropdown');
+    setupDropdown('cancerDropdownBtn', 'cancerDropdown');
+    setupDropdown('awarenessDropdownBtn', 'awarenessDropdown');
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      const overlay = document.getElementById('mobileOverlay');
+      const closeBtn = document.getElementById('closeSidebarBtn');
+      
+      function openSidebar() {
+        menu.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeSidebar() {
+        menu.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+      
+      if (btn && menu && overlay) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openSidebar();
+        });
+        
+        closeBtn?.addEventListener('click', function(e) {
+          e.preventDefault();
+          closeSidebar();
+        });
+        
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) {
+            closeSidebar();
+          }
+        });
+        
+        const navLinks = menu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            closeSidebar();
+          });
+        });
+        
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            closeSidebar();
+          }
+        });
+      }
+
+      // Sidebar collapsible sections
+      const aboutToggleBtn = document.getElementById('aboutToggleBtn');
+      const aboutContent = document.getElementById('aboutContent');
+      const aboutChevron = document.getElementById('aboutChevron');
+      
+      const servicesToggleBtn = document.getElementById('servicesToggleBtn');
+      const servicesContent = document.getElementById('servicesContent');
+      const servicesChevron = document.getElementById('servicesChevron');
+
+      const cancerToggleBtn = document.getElementById('cancerToggleBtn');
+      const cancerContent = document.getElementById('cancerContent');
+      const cancerChevron = document.getElementById('cancerChevron');
+
+      const awarenessToggleBtn = document.getElementById('awarenessToggleBtn');
+      const awarenessContent = document.getElementById('awarenessContent');
+      const awarenessChevron = document.getElementById('awarenessChevron');
+      
+      // Initialize sections as collapsed
+      if (aboutContent) {
+        aboutContent.style.maxHeight = '0px';
+        aboutContent.style.opacity = '0';
+      }
+      if (servicesContent) {
+        servicesContent.style.maxHeight = '0px';
+        servicesContent.style.opacity = '0';
+      }
+      if (cancerContent) {
+        cancerContent.style.maxHeight = '0px';
+        cancerContent.style.opacity = '0';
+      }
+      if (awarenessContent) {
+        awarenessContent.style.maxHeight = '0px';
+        awarenessContent.style.opacity = '0';
+      }
+      
+      // About Us toggle
+      if (aboutToggleBtn && aboutContent && aboutChevron) {
+        aboutToggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isExpanded = aboutContent.style.maxHeight !== '0px';
+          
+          if (isExpanded) {
+            aboutContent.style.maxHeight = '0px';
+            aboutContent.style.opacity = '0';
+            aboutChevron.style.transform = 'rotate(0deg)';
+          } else {
+            aboutContent.style.maxHeight = aboutContent.scrollHeight + 'px';
+            aboutContent.style.opacity = '1';
+            aboutChevron.style.transform = 'rotate(180deg)';
+          }
+        });
+      }
+      
+      // Services toggle
+      if (servicesToggleBtn && servicesContent && servicesChevron) {
+        servicesToggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isExpanded = servicesContent.style.maxHeight !== '0px';
+          
+          if (isExpanded) {
+            servicesContent.style.maxHeight = '0px';
+            servicesContent.style.opacity = '0';
+            servicesChevron.style.transform = 'rotate(0deg)';
+          } else {
+            servicesContent.style.maxHeight = servicesContent.scrollHeight + 'px';
+            servicesContent.style.opacity = '1';
+            servicesChevron.style.transform = 'rotate(180deg)';
+          }
+        });
+      }
+
+      // Cancer Types toggle
+      if (cancerToggleBtn && cancerContent && cancerChevron) {
+        cancerToggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isExpanded = cancerContent.style.maxHeight !== '0px';
+          
+          if (isExpanded) {
+            cancerContent.style.maxHeight = '0px';
+            cancerContent.style.opacity = '0';
+            cancerChevron.style.transform = 'rotate(0deg)';
+          } else {
+            cancerContent.style.maxHeight = cancerContent.scrollHeight + 'px';
+            cancerContent.style.opacity = '1';
+            cancerChevron.style.transform = 'rotate(180deg)';
+          }
+        });
+      }
+
+      // Awareness toggle
+      if (awarenessToggleBtn && awarenessContent && awarenessChevron) {
+        awarenessToggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isExpanded = awarenessContent.style.maxHeight !== '0px';
+          
+          if (isExpanded) {
+            awarenessContent.style.maxHeight = '0px';
+            awarenessContent.style.opacity = '0';
+            awarenessChevron.style.transform = 'rotate(0deg)';
+          } else {
+            awarenessContent.style.maxHeight = awarenessContent.scrollHeight + 'px';
+            awarenessContent.style.opacity = '1';
+            awarenessChevron.style.transform = 'rotate(180deg)';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
