@@ -105,8 +105,7 @@ export default function NewPostPage() {
                     borderColor: '#e5e7eb',
                     color: '#0b3b61',
                     backgroundColor: '#fff',
-                    border: '1px solid #e5e7eb',
-                    focusRing: '#0b3b61'
+                    border: '1px solid #e5e7eb'
                   }}
                   placeholder="Your post title"
                 />
