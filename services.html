@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - MIOC | Cancer Treatment & Care Services</title>
+  <title>Services - Summit Medical Services | Cancer Treatment & Care Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
@@ -17,10 +17,10 @@
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-white text-gray-900 border-b border-gray-200">
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm text-gray-900 border-b border-gray-200 transition-shadow">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -39,7 +39,7 @@
                 <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
               </div>
               <div>
-                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Workshops</div>
                 <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
                 <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
                 <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="relative">
-          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none text-[color:var(--accent)] font-semibold">
             <span>Services</span>
             <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -63,7 +63,7 @@
             <div class="grid grid-cols-2 gap-6 p-6">
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
-                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)]">Services</a>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)] font-semibold">Services</a>
               </div>
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
@@ -77,24 +77,101 @@
             </div>
           </div>
         </div>
-        <a href="doctors.html" class="hover:underline">Doctors</a>
+        <div class="relative">
+          <button id="cancerDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Cancer Types</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="cancerDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Cancer Types</div>
+                <a href="cancer-types.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Cancer Types</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Cancer</div>
+                <a href="breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer</a>
+                <a href="brain-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Lung Cancer</a>
+                <a href="prostate-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gastrointestinal Cancers</a>
+                <a href="kidney-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gynecological Cancers</a>
+                <a href="blood-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Genitourinary Cancers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="awarenessDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Awareness</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="awarenessDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Awareness</div>
+                <a href="awareness-blogs.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Blogs</a>
+                <a href="awareness-cancer-myths.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Cancer &amp; Myths</a>
+                <a href="awareness-campaigns.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Awareness Campaigns</a>
+                <a href="awareness-breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer Awareness</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Resources</div>
+                <a href="awareness-newsletter.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Newsletter</a>
+                <a href="awareness-hpv-vaccination.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">HPV Vaccination</a>
+                <a href="awareness-joint-advisory.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Joint Advisory For Cancer Patients</a>
+                <a href="awareness-stories-of-resilience.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Stories of Resilience</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
     </div>
-    <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-navy-900 px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <!-- mobile menu button -->
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
   </div>
   
 </header>
+
+<script>
+  // Fix: move live-server injected scripts out of SVGs into document.body
+  (function(){
+    try {
+      // Find any <script> elements that are descendants of an <svg>
+      document.querySelectorAll('svg script').forEach(s => {
+        try {
+          const txt = (s.textContent || '').toLowerCase();
+          if (txt.includes('live reload') || txt.includes('refreshcss') || txt.includes('live reload enabled')) {
+            // Move script to body so it's no longer inside an SVG
+            document.body.appendChild(s);
+            console.log('moved live-server script out of svg');
+          }
+        } catch(e) { console.log('move-script-inner-err', e); }
+      });
+    } catch(err) {
+      console.log('move-script-err', err);
+    }
+  })();
+</script>
 
 <!-- Mobile Sidebar Overlay -->
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="fixed top-0 left-0 h-full w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed top-0 left-0 h-screen w-80 bg-blue-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl md:hidden flex flex-col">
   <!-- Sidebar Header -->
-  <div class="flex items-center justify-between p-6 border-b border-blue-700">
+  <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
     <div class="flex items-center space-x-3">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-12 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-12 w-auto filter brightness-0 invert">
     </div>
     <button id="closeSidebarBtn" class="p-2 hover:bg-blue-800 rounded-lg transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,52 +193,133 @@
 
       <!-- About Us Section -->
       <div class="space-y-2">
-        <div class="flex items-center space-x-2 px-3 py-2">
-          <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <button id="aboutToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
+          </div>
+          <svg id="aboutChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
-          <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
-        </div>
+        </button>
         
-        <!-- About Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
-          <a href="about.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">About Us</a>
-          <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
-        </div>
+        <div id="aboutContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <!-- About Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
+            <a href="about.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">About Us</a>
+            <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
+          </div>
 
-        <!-- Conference Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Conference</div>
-          <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
-          <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
-          <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
-          <a href="bowclc-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">BoWCLC-2024</a>
-        </div>
+          <!-- Workshops Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Workshops</div>
+            <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
+            <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
+            <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
+            <a href="bowclc-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">BoWCLC-2024</a>
+          </div>
 
-        <!-- Investor Sub-section -->
-        <div class="ml-6 space-y-1">
-          <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Investor</div>
-          <a href="corporate-filing.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Corporate Filing</a>
+          <!-- Investor Sub-section -->
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Investor</div>
+            <a href="corporate-filing.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Corporate Filing</a>
+          </div>
         </div>
       </div>
 
-      <!-- Main Navigation -->
+      <!-- Services Section -->
+      <div class="space-y-2">
+        <button id="servicesToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Services</span>
+          </div>
+          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Services</div>
+              <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-[color:var(--accent)] font-semibold ml-2">Services</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Services</div>
+            <a href="chemotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Chemotherapy</a>
+            <a href="immunotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Immunotherapy</a>
+            <a href="targeted-therapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Targeted Therapy</a>
+            <a href="clinical-research.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Clinical Research</a>
+            <a href="palliative-care.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Palliative Care</a>
+            <a href="day-care-centre.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Day Care Centre</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cancer Types Section -->
+      <div class="space-y-2">
+        <button id="cancerToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3 0 1.306.835 2.418 2 2.83V17a1 1 0 102 0v-3.17A3.001 3.001 0 0015 11c0-1.657-1.343-3-3-3z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Cancer Types</span>
+          </div>
+          <svg id="cancerChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="cancerContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Cancer Types</div>
+            <a href="cancer-types.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer Types</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Cancer</div>
+            <a href="breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer</a>
+            <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Lung Cancer</a>
+            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gastrointestinal Cancers</a>
+            <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gynecological Cancers</a>
+            <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Genitourinary Cancers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button id="awarenessToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Awareness</span>
+          </div>
+          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <a href="awareness-blogs.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blogs</a>
+            <a href="awareness-cancer-myths.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer &amp; Myths</a>
+            <a href="awareness-campaigns.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Awareness Campaigns</a>
+            <a href="awareness-breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer Awareness</a>
+          </div>
+          <div class="space-y-1">
+            <a href="awareness-newsletter.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Newsletter</a>
+            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">HPV Vaccination</a>
+            <a href="awareness-joint-advisory.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Joint Advisory For Cancer Patients</a>
+            <a href="awareness-stories-of-resilience.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Stories of Resilience</a>
+          </div>
+        </div>
+      </div>
+
       <div class="border-t border-blue-700 pt-6 space-y-2">
-        <a href="services.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-          </svg>
-          <span class="font-medium">Services</span>
-        </a>
-        
-        <a href="doctors.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          <span class="font-medium">Doctors</span>
-        </a>
-        
         <a href="contact.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
           <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -266,7 +424,7 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center max-w-2xl mx-auto mb-10">
       <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Core clinical services</p>
-      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Oncology services at MIOC</h2>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Oncology services at Summit Medical Services</h2>
       <p class="mt-3 text-sm sm:text-base text-gray-600">Integrated medical, surgical and radiation oncology supported by diagnostics and comprehensive supportive care.</p>
     </div>
 
@@ -314,7 +472,7 @@
         <div>
           <div class="text-4xl mb-4">🩸</div>
           <h3 class="text-xl font-bold mb-3 text-gray-900">Hematology</h3>
-          <p class="text-gray-600 mb-4">Blood cancer diagnosis and treatment including bone marrow transplants</p>
+          <p class="text-gray-600 mb-4">Genitourinary cancer diagnosis and treatment including urologic surgery, radiation and systemic therapy</p>
           <ul class="text-sm text-gray-600 space-y-1">
             <li>• Leukemia treatment</li>
             <li>• Lymphoma care</li>
@@ -345,6 +503,134 @@
             <li>• Pain management</li>
             <li>• Nutritional counseling</li>
             <li>• Psychological support</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🩺</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Oncology Consultations</h3>
+          <p class="text-gray-600 mb-4">Expert consultation services for diagnosis, treatment planning and survivorship.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Initial Cancer Consultation (New Patients)</li>
+            <li>• Follow-up Consultations</li>
+            <li>• Second Opinion Services</li>
+            <li>• Survivorship Planning Consultations</li>
+            <li>• Genetic Counseling</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🧭</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Patient Navigation Services</h3>
+          <p class="text-gray-600 mb-4">Coordinated support from diagnosis through treatment and beyond.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Diagnosis to Treatment Coordination</li>
+            <li>• Appointment Scheduling and Tracking</li>
+            <li>• Treatment Barrier Identification</li>
+            <li>• Follow-up Care Management</li>
+            <li>• Treatment Abandonment Prevention</li>
+            <li>• Insurance and Financial Navigation</li>
+            <li>• Healthcare System Navigation Support</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🫂</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Psychosocial Oncology Services</h3>
+          <p class="text-gray-600 mb-4">Psychological and social support for patients and families.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Individual Counseling</li>
+            <li>• Family Counseling and Support</li>
+            <li>• Distress Screening and Assessment</li>
+            <li>• Coping Strategy Development</li>
+            <li>• Spiritual and Cultural Support</li>
+            <li>• Support Group Facilitation</li>
+            <li>• Caregiver Support Services</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🥗</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Nutritional Oncology Support</h3>
+          <p class="text-gray-600 mb-4">Nutrition care tailored to support treatment and recovery.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Initial Nutritional Assessment</li>
+            <li>• Personalized Meal Planning</li>
+            <li>• Weight Management (Loss/Gain)</li>
+            <li>• Treatment-Related Malnutrition Prevention</li>
+            <li>• Dietary Supplementation Guidance</li>
+            <li>• Nutrition During Active Treatment</li>
+            <li>• Post-Treatment Nutrition</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🚨</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Oncology Emergency Management</h3>
+          <p class="text-gray-600 mb-4">Rapid response and stabilization for oncology emergencies.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Allergic Reaction Management</li>
+            <li>• Infusion Reaction Treatment</li>
+            <li>• Neutropenic Fever Stabilization</li>
+            <li>• Acute Symptom Management</li>
+            <li>• 24-Hour Observation Services</li>
+            <li>• Emergency Referral Coordination</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">💊</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Pharmacy Services</h3>
+          <p class="text-gray-600 mb-4">Specialized oncology pharmacy services for safe medication management.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Chemotherapy Drug Compounding (Cleanroom)</li>
+            <li>• Medication Dispensing</li>
+            <li>• Drug Interaction Review</li>
+            <li>• Patient Medication Counseling</li>
+            <li>• Home Medication Management Education</li>
+            <li>• Supportive Care Medications</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🔎</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Diagnostic Coordination</h3>
+          <p class="text-gray-600 mb-4">Coordinating tests and reviews for accurate staging and treatment planning.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Laboratory Test Coordination</li>
+            <li>• Imaging Studies Coordination (CT, MRI, PET-CT)</li>
+            <li>• Pathology Review and Second Opinions</li>
+            <li>• Biomarker and Genetic Testing</li>
+            <li>• Staging Workup Coordination</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+        <div>
+          <div class="text-4xl mb-4">🎓</div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Cancer Education Programs</h3>
+          <p class="text-gray-600 mb-4">Education and outreach to empower patients and communities.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Monthly Educational Webinars</li>
+            <li>• Quarterly Cancer Navigation Workshops</li>
+            <li>• Online Resource Library</li>
+            <li>• Community Screening Events</li>
+            <li>• Health Talks and Outreach Programs</li>
           </ul>
         </div>
       </article>
@@ -413,8 +699,8 @@
 <footer class="bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
     <div>
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto mb-4">
-      <h5 class="font-semibold">About MIOC</h5>
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="w-auto mb-4">
+      <h5 class="font-semibold">About Summit Medical Services</h5>
       <p class="text-sm text-gray-600 mt-3">Committed to providing comprehensive cancer care with compassion and excellence.</p>
     </div>
     <div>
@@ -439,8 +725,8 @@
     <div>
       <h5 class="font-semibold">Contact</h5>
       <div class="text-sm text-gray-600 mt-3">
-        <p>123 Medical Center Drive<br/>Mumbai, Maharashtra 400001<br/>India</p>
-        <p class="mt-2">Phone: +91 22 2567 8900<br/>Emergency: +91 22 2567 8911<br/>Email: info@mioc.in</p>
+        <p>DIA Road, Asokoro<br/>Mambila Barracks, Abuja<br/>Nigeria</p>
+        <p class="mt-2">Phone: [Your phone number]<br/>Email: info@summitoncology.com</p>
         <div class="flex space-x-3 mt-3">
           <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
           <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
@@ -451,7 +737,7 @@
   </div>
   <div class="border-t bg-white py-4">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
-      <div>&copy; 2025 MIOC. All rights reserved.</div>
+      <div>&copy; 2025 Summit Medical Services. All rights reserved.</div>
       <div class="flex items-center space-x-3">
         <a href="#" class="hover:underline">Privacy</a>
         <a href="#" class="hover:underline">Terms</a>
@@ -522,11 +808,116 @@
         }
       });
     }
-  });
-</script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+    // Sidebar collapsible sections
+    const aboutToggleBtn = document.getElementById('aboutToggleBtn');
+    const aboutContent = document.getElementById('aboutContent');
+    const aboutChevron = document.getElementById('aboutChevron');
+    
+    const servicesToggleBtn = document.getElementById('servicesToggleBtn');
+    const servicesContent = document.getElementById('servicesContent');
+    const servicesChevron = document.getElementById('servicesChevron');
+
+    const cancerToggleBtn = document.getElementById('cancerToggleBtn');
+    const cancerContent = document.getElementById('cancerContent');
+    const cancerChevron = document.getElementById('cancerChevron');
+
+    const awarenessToggleBtn = document.getElementById('awarenessToggleBtn');
+    const awarenessContent = document.getElementById('awarenessContent');
+    const awarenessChevron = document.getElementById('awarenessChevron');
+    
+    // Initialize sections as collapsed
+    if (aboutContent) {
+      aboutContent.style.maxHeight = '0px';
+      aboutContent.style.opacity = '0';
+    }
+    if (servicesContent) {
+      servicesContent.style.maxHeight = '0px';
+      servicesContent.style.opacity = '0';
+    }
+
+    if (cancerContent) {
+      cancerContent.style.maxHeight = '0px';
+      cancerContent.style.opacity = '0';
+    }
+
+    if (awarenessContent) {
+      awarenessContent.style.maxHeight = '0px';
+      awarenessContent.style.opacity = '0';
+    }
+    
+    // About Us toggle functionality
+    if (aboutToggleBtn && aboutContent && aboutChevron) {
+      aboutToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = aboutContent.style.maxHeight !== '0px';
+        
+        if (isExpanded) {
+          aboutContent.style.maxHeight = '0px';
+          aboutContent.style.opacity = '0';
+          aboutChevron.style.transform = 'rotate(0deg)';
+        } else {
+          aboutContent.style.maxHeight = aboutContent.scrollHeight + 'px';
+          aboutContent.style.opacity = '1';
+          aboutChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+    
+    // Services toggle functionality
+    if (servicesToggleBtn && servicesContent && servicesChevron) {
+      servicesToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = servicesContent.style.maxHeight !== '0px';
+        
+        if (isExpanded) {
+          servicesContent.style.maxHeight = '0px';
+          servicesContent.style.opacity = '0';
+          servicesChevron.style.transform = 'rotate(0deg)';
+        } else {
+          servicesContent.style.maxHeight = servicesContent.scrollHeight + 'px';
+          servicesContent.style.opacity = '1';
+          servicesChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    // Cancer Types toggle functionality
+    if (cancerToggleBtn && cancerContent && cancerChevron) {
+      cancerToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = cancerContent.style.maxHeight !== '0px';
+
+        if (isExpanded) {
+          cancerContent.style.maxHeight = '0px';
+          cancerContent.style.opacity = '0';
+          cancerChevron.style.transform = 'rotate(0deg)';
+        } else {
+          cancerContent.style.maxHeight = cancerContent.scrollHeight + 'px';
+          cancerContent.style.opacity = '1';
+          cancerChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    // Awareness mobile toggle
+    if (awarenessToggleBtn && awarenessContent && awarenessChevron) {
+      awarenessToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = awarenessContent.style.maxHeight !== '0px';
+
+        if (isExpanded) {
+          awarenessContent.style.maxHeight = '0px';
+          awarenessContent.style.opacity = '0';
+          awarenessChevron.style.transform = 'rotate(0deg)';
+        } else {
+          awarenessContent.style.maxHeight = awarenessContent.scrollHeight + 'px';
+          awarenessContent.style.opacity = '1';
+          awarenessChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
     // About Us dropdown functionality
     const aboutBtn = document.getElementById('aboutDropdownBtn');
     const aboutDropdown = document.getElementById('aboutDropdown');
@@ -536,18 +927,39 @@
         e.preventDefault();
         const isVisible = !aboutDropdown.classList.contains('opacity-0');
         
+        // Close services dropdown if open
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesBtn = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close cancer types dropdown if open
+        const cancerDropdown = document.getElementById('cancerDropdown');
+        const cancerBtn = document.getElementById('cancerDropdownBtn');
+        if (cancerDropdown && cancerBtn) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close awareness dropdown if open
+        const awarenessDropdown = document.getElementById('awarenessDropdown');
+        const awarenessBtn = document.getElementById('awarenessDropdownBtn');
+        if (awarenessDropdown && awarenessBtn) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
         if (isVisible) {
-          // Hide dropdown
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         } else {
-          // Show dropdown
           aboutDropdown.classList.remove('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(180deg)';
         }
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
         if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
@@ -555,8 +967,273 @@
         }
       });
     }
+
+    // Services dropdown functionality
+    const servicesBtn = document.getElementById('servicesDropdownBtn');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    
+    if (servicesBtn && servicesDropdown) {
+      servicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !servicesDropdown.classList.contains('opacity-0');
+        
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close cancer types dropdown if open
+        const cancerDropdown = document.getElementById('cancerDropdown');
+        const cancerBtn = document.getElementById('cancerDropdownBtn');
+        if (cancerDropdown && cancerBtn) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close awareness dropdown if open
+        const awarenessDropdown = document.getElementById('awarenessDropdown');
+        const awarenessBtn = document.getElementById('awarenessDropdownBtn');
+        if (awarenessDropdown && awarenessBtn) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+        
+        if (isVisible) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          servicesDropdown.classList.remove('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Cancer Types dropdown functionality
+    const cancerBtn = document.getElementById('cancerDropdownBtn');
+    const cancerDropdown = document.getElementById('cancerDropdown');
+    
+    if (cancerBtn && cancerDropdown) {
+      cancerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !cancerDropdown.classList.contains('opacity-0');
+
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close services dropdown if open
+        const servicesDropdownLocal = document.getElementById('servicesDropdown');
+        const servicesBtnLocal = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdownLocal && servicesBtnLocal) {
+          servicesDropdownLocal.classList.add('opacity-0', 'invisible');
+          servicesBtnLocal.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close awareness dropdown if open
+        const awarenessDropdownLocal = document.getElementById('awarenessDropdown');
+        const awarenessBtnLocal = document.getElementById('awarenessDropdownBtn');
+        if (awarenessDropdownLocal && awarenessBtnLocal) {
+          awarenessDropdownLocal.classList.add('opacity-0', 'invisible');
+          awarenessBtnLocal.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        if (isVisible) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          cancerDropdown.classList.remove('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!cancerBtn.contains(e.target) && !cancerDropdown.contains(e.target)) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Awareness dropdown functionality
+    const awarenessBtn = document.getElementById('awarenessDropdownBtn');
+    const awarenessDropdown = document.getElementById('awarenessDropdown');
+    
+    if (awarenessBtn && awarenessDropdown) {
+      awarenessBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !awarenessDropdown.classList.contains('opacity-0');
+
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close services dropdown if open
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesBtn = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close cancer types dropdown if open
+        const cancerDropdown = document.getElementById('cancerDropdown');
+        const cancerBtn = document.getElementById('cancerDropdownBtn');
+        if (cancerDropdown && cancerBtn) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        if (isVisible) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          awarenessDropdown.classList.remove('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!awarenessBtn.contains(e.target) && !awarenessDropdown.contains(e.target)) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
   });
 </script>
 
+
+<!-- Hero Carousel script removed; hero now uses a static card-based layout. -->
+
+<!-- Animation and Scroll Effects Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Header shadow on scroll
+    const header = document.getElementById('siteHeader');
+    if (header) {
+      const checkHeader = () => {
+        if (window.scrollY > 8) header.classList.add('shadow-md');
+        else header.classList.remove('shadow-md');
+      };
+      checkHeader();
+      window.addEventListener('scroll', checkHeader, { passive: true });
+    }
+
+    // Scroll Reveal Animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          
+          // Trigger counter animation if it's a counter element
+          const counter = entry.target.querySelector('.counter');
+          if (counter) {
+            animateCounter(counter);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter Animation
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        // Format the number display
+        if (target >= 1000) {
+          element.textContent = Math.floor(current).toLocaleString() + '+';
+        } else {
+          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+        }
+      }, 16);
+    }
+
+    // Add hover effects to buttons and cards
+    const buttons = document.querySelectorAll('a[href], button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+      });
+      
+      button.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Floating animation for call-to-action buttons
+    const ctaButtons = document.querySelectorAll('.animate-pulse-slow');
+    ctaButtons.forEach(button => {
+      let direction = 1;
+      setInterval(() => {
+        const currentTransform = button.style.transform || 'translateY(0px)';
+        const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/) || [0, 0])[1];
+        const newY = currentY + (direction * 2);
+        
+        if (Math.abs(newY) > 5) {
+          direction *= -1;
+        }
+        
+        button.style.transform = `translateY(${newY}px)`;
+      }, 100);
+    });
+
+    // Parallax effect for hero images
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero-slide img');
+      
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Add loading animation to forms
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.classList.add('loading');
+        }
+      });
+    });
+
+    // ... rest of script (omitted for brevity) ...
+  });
+</script>
 </body>
 </html>

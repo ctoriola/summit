@@ -378,10 +378,10 @@
 <body class="antialiased text-gray-800 bg-white">
 
 <!-- HEADER -->
-<header class="bg-white text-gray-900 border-b border-gray-200">
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm text-gray-900 border-b border-gray-200 transition-shadow">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center justify-between flex-1">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-20 w-auto">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-20 w-auto">
       <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
         <a href="index.html" class="hover:underline">Home</a>
         <!-- About Us dropdown -->
@@ -400,7 +400,7 @@
                 <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
               </div>
               <div>
-                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Workshops</div>
                 <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
                 <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
                 <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
@@ -454,10 +454,36 @@
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Cancer</div>
                 <a href="breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer</a>
-                <a href="brain-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Brain Cancer</a>
-                <a href="prostate-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Prostate Cancer</a>
-                <a href="kidney-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Kidney Cancer</a>
-                <a href="blood-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Blood Cancer</a>
+                <a href="brain-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Lung Cancer</a>
+                <a href="prostate-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gastrointestinal Cancers</a>
+                <a href="kidney-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Gynecological Cancers</a>
+                <a href="blood-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Genitourinary Cancers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="awarenessDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Awareness</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="awarenessDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Awareness</div>
+                <a href="awareness-blogs.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Blogs</a>
+                <a href="awareness-cancer-myths.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Cancer &amp; Myths</a>
+                <a href="awareness-campaigns.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Awareness Campaigns</a>
+                <a href="awareness-breast-cancer.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Breast Cancer Awareness</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Resources</div>
+                <a href="awareness-newsletter.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Newsletter</a>
+                <a href="awareness-hpv-vaccination.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">HPV Vaccination</a>
+                <a href="awareness-joint-advisory.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Joint Advisory For Cancer Patients</a>
+                <a href="awareness-stories-of-resilience.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Stories of Resilience</a>
               </div>
             </div>
           </div>
@@ -485,7 +511,7 @@
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
     <div class="flex items-center space-x-3">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-12 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-12 w-auto filter brightness-0 invert">
     </div>
     <button id="closeSidebarBtn" class="p-2 hover:bg-blue-800 rounded-lg transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -494,17 +520,10 @@
     </button>
   </div>
 
+
   <!-- Sidebar Navigation -->
   <nav class="flex-1 overflow-y-auto p-6">
     <div class="space-y-6">
-      <!-- Home Link -->
-      <a href="index.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-        <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <span class="font-medium">Home</span>
-      </a>
-
       <!-- About Us Section -->
       <div class="space-y-2">
         <button id="aboutToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
@@ -527,9 +546,9 @@
             <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
           </div>
 
-          <!-- Conference Sub-section -->
+          <!-- Workshops Sub-section -->
           <div class="space-y-1">
-            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Conference</div>
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Workshops</div>
             <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
             <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
             <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
@@ -596,10 +615,42 @@
           <div class="space-y-1">
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Cancer</div>
             <a href="breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer</a>
-            <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Brain Cancer</a>
-            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Prostate Cancer</a>
-            <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Kidney Cancer</a>
-            <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blood Cancer</a>
+            <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Lung Cancer</a>
+            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gastrointestinal Cancers</a>
+            <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gynecological Cancers</a>
+            <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Genitourinary Cancers</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awareness Section -->
+      <div class="space-y-2">
+        <button id="awarenessToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Awareness</span>
+          </div>
+          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Awareness</div>
+            <a href="awareness-blogs.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blogs</a>
+            <a href="awareness-cancer-myths.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer &amp; Myths</a>
+            <a href="awareness-campaigns.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Awareness Campaigns</a>
+            <a href="awareness-breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer Awareness</a>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Resources</div>
+            <a href="awareness-newsletter.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Newsletter</a>
+            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">HPV Vaccination</a>
+            <a href="awareness-joint-advisory.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Joint Advisory For Cancer Patients</a>
+            <a href="awareness-stories-of-resilience.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Stories of Resilience</a>
           </div>
         </div>
       </div>
@@ -689,7 +740,7 @@
           </div>
           <div class="flex items-center justify-between mb-4">
             <div>
-              <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Today at MIOC</div>
+              <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Today at Summit Medical Services</div>
               <div class="text-lg font-semibold text-gray-900">Your care at a glance</div>
             </div>
             <span class="inline-flex items-center px-3 py-1 rounded-full bg-[color:var(--navy)] text-[11px] font-semibold text-white">
@@ -731,7 +782,7 @@
       <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 h-full flex flex-col justify-between">
         <div>
           <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">What we offer</p>
-          <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Comprehensive cancer care at MIOC</h2>
+          <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Comprehensive cancer care at Summit Medical Services</h2>
           <p class="mt-4 text-gray-700">Comprehensive cancer care delivered through a collaborative team of oncologists, surgeons, radiologists and support specialists. We emphasize early detection, evidence-based treatments and compassionate follow-up care.</p>
         </div>
         <ul class="mt-6 space-y-3 text-gray-700 text-sm">
@@ -769,7 +820,7 @@
 
 <!-- TREATMENT FLOW -->
 <section class="max-w-7xl mx-auto px-6 py-12 scroll-reveal">
-  <h3 class="text-center text-xl font-semibold animate-fade-in-up mb-8">Your Treatment Journey at MIOC</h3>
+  <h3 class="text-center text-xl font-semibold animate-fade-in-up mb-8">Your Treatment Journey at Summit Medical Services</h3>
   <div class="treatment-journey-grid">
     <!-- step card -->
     <div class="flex flex-col items-center text-center space-y-4 scroll-reveal stagger-1 treatment-step">
@@ -897,8 +948,8 @@
 <section id="services" class="bg-gray-50 py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center max-w-2xl mx-auto">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Why patients choose MIOC</p>
-      <h3 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">How MIOC is different</h3>
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Why patients choose Summit Medical Services</p>
+      <h3 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">How Summit Medical Services is different</h3>
       <p class="mt-3 text-sm sm:text-base text-gray-600">From infrastructure to research, every part of our center is designed around coordinated, patient-first cancer care.</p>
     </div>
 
@@ -985,7 +1036,7 @@
     <div class="flex flex-col lg:flex-row lg:items-start gap-10">
       <div class="lg:w-1/3 space-y-4">
         <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Our specialists</p>
-        <h3 class="text-2xl lg:text-3xl font-extrabold text-gray-900">Specialized Doctors at MIOC</h3>
+        <h3 class="text-2xl lg:text-3xl font-extrabold text-gray-900">Specialized Doctors at Summit Medical Services</h3>
         <p class="text-sm sm:text-base text-gray-600">A multidisciplinary team of medical, surgical and radiation oncologists working together on every case.</p>
         <ul class="text-sm text-gray-700 space-y-2">
           <li class="flex items-start gap-2">
@@ -1012,7 +1063,7 @@
             <div class="flex gap-6 min-w-full">
               <!-- doctor card -->
               <article class="min-w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex-shrink-0 transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-                <div class="h-32 bg-gray-100 rounded-xl mb-4 flex items-center justify-center text-gray-500 text-sm">Photo</div>
+                <img src="https://www.gravatar.com/avatar/f8a0c0f3e5f8c8e0e0e0e0e0e0e0e0e0?d=identicon&s=128" alt="Dr. Sarah Johnson" class="h-32 w-32 rounded-xl mb-4 object-cover mx-auto bg-gray-100">
                 <div class="space-y-1">
                   <div class="font-semibold text-lg text-gray-900">Dr. Sarah Johnson</div>
                   <div class="text-sm text-gray-600">Medical Oncologist</div>
@@ -1021,7 +1072,7 @@
               </article>
 
               <article class="min-w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex-shrink-0 transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-                <div class="h-32 bg-gray-100 rounded-xl mb-4 flex items-center justify-center text-gray-500 text-sm">Photo</div>
+                <img src="https://www.gravatar.com/avatar/b4c1f8a5e3d7c9f1e0e0e0e0e0e0e0e0?d=identicon&s=128" alt="Dr. Michael Chen" class="h-32 w-32 rounded-xl mb-4 object-cover mx-auto bg-gray-100">
                 <div class="space-y-1">
                   <div class="font-semibold text-lg text-gray-900">Dr. Michael Chen</div>
                   <div class="text-sm text-gray-600">Radiation Oncologist</div>
@@ -1030,7 +1081,7 @@
               </article>
 
               <article class="min-w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex-shrink-0 transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-                <div class="h-32 bg-gray-100 rounded-xl mb-4 flex items-center justify-center text-gray-500 text-sm">Photo</div>
+                <img src="https://www.gravatar.com/avatar/d9e8f7c6b5a4e3f2e1d0c0b0a0f0e0d0?d=identicon&s=128" alt="Dr. Emily Rodriguez" class="h-32 w-32 rounded-xl mb-4 object-cover mx-auto bg-gray-100">
                 <div class="space-y-1">
                   <div class="font-semibold text-lg text-gray-900">Dr. Emily Rodriguez</div>
                   <div class="text-sm text-gray-600">Surgical Oncologist</div>
@@ -1039,7 +1090,7 @@
               </article>
 
               <article class="min-w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex-shrink-0 transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-                <div class="h-32 bg-gray-100 rounded-xl mb-4 flex items-center justify-center text-gray-500 text-sm">Photo</div>
+                <img src="https://www.gravatar.com/avatar/c8b7a6f5e4d3c2b1a0f0e0d0c0b0a0f0?d=identicon&s=128" alt="Dr. David Kumar" class="h-32 w-32 rounded-xl mb-4 object-cover mx-auto bg-gray-100">
                 <div class="space-y-1">
                   <div class="font-semibold text-lg text-gray-900">Dr. David Kumar</div>
                   <div class="text-sm text-gray-600">Hematologist</div>
@@ -1055,14 +1106,14 @@
 </section>
 
 <!-- FIND NEAREST CENTER -->
-<section class="bg-gray-50 py-16">
+<section class="bg-gray-50 py-16" style="display: none;">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
     <div class="lg:col-span-7">
       <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 h-full flex flex-col">
         <div>
           <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Find a center</p>
           <h4 class="mt-2 text-xl font-extrabold text-gray-900">Find the nearest center</h4>
-          <p class="mt-2 text-sm text-gray-600">Search by city, specialty and doctor to locate the MIOC center best suited to your needs.</p>
+          <p class="mt-2 text-sm text-gray-600">Search by city, specialty and doctor to locate the Summit Medical Services center best suited to your needs.</p>
         </div>
         <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <select class="p-3 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--navy)] focus:border-transparent">
@@ -1115,29 +1166,41 @@
     </div>
 
     <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-        <div>
-          <div class="mb-4 h-40 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Video 1</div>
-          <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Understanding immunotherapy</h4>
-          <p class="mt-2 text-xs text-gray-600">How the immune system can be guided to target cancer cells more precisely.</p>
-        </div>
-      </article>
+      <a href="https://www.youtube.com/watch?v=0ZJOFcHSk8U&pp=ygUbVW5kZXJzdGFuZGluZyBpbW11bm90aGVyYXB5" target="_blank" class="group">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div>
+            <div class="mb-4 h-40 rounded-xl overflow-hidden flex items-center justify-center bg-gray-200 group-hover:opacity-90 transition-opacity">
+              <img src="https://img.youtube.com/vi/0ZJOFcHSk8U/maxresdefault.jpg" alt="Understanding immunotherapy video thumbnail" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-semibold text-gray-900 text-sm sm:text-base group-hover:text-[color:var(--navy)]">Understanding immunotherapy</h4>
+            <p class="mt-2 text-xs text-gray-600">How the immune system can be guided to target cancer cells more precisely.</p>
+          </div>
+        </article>
+      </a>
 
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-        <div>
-          <div class="mb-4 h-40 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Video 2</div>
-          <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Screening & early detection</h4>
-          <p class="mt-2 text-xs text-gray-600">Why regular screening matters and what tests may be recommended.</p>
-        </div>
-      </article>
+      <a href="https://www.youtube.com/watch?v=edpWxJahjXU&pp=ygUds2NyZWVuaW5nIGFuZCBlYXJseSBkZXRlY3Rpb27SBwkJTQoBhyohjO8%3D" target="_blank" class="group">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div>
+            <div class="mb-4 h-40 rounded-xl overflow-hidden flex items-center justify-center bg-gray-200 group-hover:opacity-90 transition-opacity">
+              <img src="https://img.youtube.com/vi/edpWxJahjXU/maxresdefault.jpg" alt="Screening & early detection video thumbnail" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-semibold text-gray-900 text-sm sm:text-base group-hover:text-[color:var(--navy)]">Screening & early detection</h4>
+            <p class="mt-2 text-xs text-gray-600">Why regular screening matters and what tests may be recommended.</p>
+          </div>
+        </article>
+      </a>
 
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
-        <div>
-          <div class="mb-4 h-40 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Video 3</div>
-          <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Living well during treatment</h4>
-          <p class="mt-2 text-xs text-gray-600">Practical tips on nutrition, movement and emotional support.</p>
-        </div>
-      </article>
+      <a href="https://www.youtube.com/watch?v=EmtrBiZaEb0&pp=ygUcbGl2aW5nIHdlbGwgZHVyaW5nIHRyZWF0bWVudA%3D%3D" target="_blank" class="group">
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div>
+            <div class="mb-4 h-40 rounded-xl overflow-hidden flex items-center justify-center bg-gray-200 group-hover:opacity-90 transition-opacity">
+              <img src="https://img.youtube.com/vi/EmtrBiZaEb0/maxresdefault.jpg" alt="Living well during treatment video thumbnail" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-semibold text-gray-900 text-sm sm:text-base group-hover:text-[color:var(--navy)]">Living well during treatment</h4>
+            <p class="mt-2 text-xs text-gray-600">Practical tips on nutrition, movement and emotional support.</p>
+          </div>
+        </article>
+      </a>
     </div>
   </div>
 </section>
@@ -1179,8 +1242,8 @@
 <footer class="bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
     <div>
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="w-auto mb-4">
-      <h5 class="font-semibold">About MIOC</h5>
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="w-auto mb-4">
+      <h5 class="font-semibold">About Summit Medical Services</h5>
       <p class="text-sm text-gray-600 mt-3">Committed to providing comprehensive cancer care with compassion and excellence.</p>
     </div>
     <div>
@@ -1205,8 +1268,8 @@
     <div>
       <h5 class="font-semibold">Contact</h5>
       <div class="text-sm text-gray-600 mt-3">
-        <p>123 Medical Center Drive<br/>Mumbai, Maharashtra 400001<br/>India</p>
-        <p class="mt-2">Phone: +91 22 2567 8900<br/>Emergency: +91 22 2567 8911<br/>Email: info@mioc.in</p>
+        <p>DIA Road, Asokoro<br/>Mambila Barracks, Abuja<br/>Nigeria</p>
+        <p class="mt-2">Phone: [Your phone number]<br/>Email: info@summitoncology.com</p>
         <div class="flex space-x-3 mt-3">
           <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
           <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
@@ -1217,7 +1280,7 @@
   </div>
   <div class="border-t bg-white py-4">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
-      <div>© 2025 MIOC. All rights reserved.</div>
+      <div>© 2025 Summit Medical Services. All rights reserved.</div>
       <div class="flex items-center space-x-3">
         <a href="#" class="hover:underline">Privacy</a>
         <a href="#" class="hover:underline">Terms</a>
@@ -1371,6 +1434,34 @@
       });
     }
 
+    // Awareness toggle functionality
+    const awarenessToggleBtn = document.getElementById('awarenessToggleBtn');
+    const awarenessContent = document.getElementById('awarenessContent');
+    const awarenessChevron = document.getElementById('awarenessChevron');
+    
+    // Initialize awareness section as collapsed
+    if (awarenessContent) {
+      awarenessContent.style.maxHeight = '0px';
+      awarenessContent.style.opacity = '0';
+    }
+    
+    if (awarenessToggleBtn && awarenessContent && awarenessChevron) {
+      awarenessToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isExpanded = awarenessContent.style.maxHeight !== '0px';
+
+        if (isExpanded) {
+          awarenessContent.style.maxHeight = '0px';
+          awarenessContent.style.opacity = '0';
+          awarenessChevron.style.transform = 'rotate(0deg)';
+        } else {
+          awarenessContent.style.maxHeight = awarenessContent.scrollHeight + 'px';
+          awarenessContent.style.opacity = '1';
+          awarenessChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
     // About Us dropdown functionality
     const aboutBtn = document.getElementById('aboutDropdownBtn');
     const aboutDropdown = document.getElementById('aboutDropdown');
@@ -1489,6 +1580,54 @@
         if (!cancerBtn.contains(e.target) && !cancerDropdown.contains(e.target)) {
           cancerDropdown.classList.add('opacity-0', 'invisible');
           cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Awareness dropdown functionality
+    const awarenessBtn = document.getElementById('awarenessDropdownBtn');
+    const awarenessDropdown = document.getElementById('awarenessDropdown');
+
+    if (awarenessBtn && awarenessDropdown) {
+      awarenessBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = !awarenessDropdown.classList.contains('opacity-0');
+
+        // Close about dropdown if open
+        if (aboutDropdown && aboutBtn) {
+          aboutDropdown.classList.add('opacity-0', 'invisible');
+          aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close services dropdown if open
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesBtn = document.getElementById('servicesDropdownBtn');
+        if (servicesDropdown && servicesBtn) {
+          servicesDropdown.classList.add('opacity-0', 'invisible');
+          servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        // Close cancer types dropdown if open
+        const cancerDropdown = document.getElementById('cancerDropdown');
+        const cancerBtn = document.getElementById('cancerDropdownBtn');
+        if (cancerDropdown && cancerBtn) {
+          cancerDropdown.classList.add('opacity-0', 'invisible');
+          cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+
+        if (isVisible) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        } else {
+          awarenessDropdown.classList.remove('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(180deg)';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!awarenessBtn.contains(e.target) && !awarenessDropdown.contains(e.target)) {
+          awarenessDropdown.classList.add('opacity-0', 'invisible');
+          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
       });
     }

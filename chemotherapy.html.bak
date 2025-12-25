@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemotherapy - Summit Medical Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #1e3a8a;
+      --accent: #fbbf24;
+      --cta-green:#c39de6
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+
+<!-- HEADER -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm text-gray-900 border-b border-gray-200 transition-shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center justify-between flex-1">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-20 w-auto">
+      <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
+        <a href="index.html" class="hover:underline">Home</a>
+        <!-- About Us dropdown -->
+        <div class="relative">
+          <button id="aboutDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>About Us</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="aboutDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-3 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
+                <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
+                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
+                <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
+                <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
+                <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
+                <a href="bowclc-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">BoWCLC-2024</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Investor</div>
+                <a href="corporate-filing.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Corporate Filing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)]">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="doctors.html" class="hover:underline">Doctors</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="max-w-7xl mx-auto px-6">
+    <nav class="text-sm text-gray-600">
+      <a href="index.html" class="hover:text-[color:var(--navy)]">Home</a> / 
+      <a href="services.html" class="hover:text-[color:var(--navy)]">Services</a> / 
+      <span class="text-[color:var(--navy)] font-semibold">Chemotherapy</span>
+    </nav>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-[color:var(--navy)] mb-6">Chemotherapy</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Advanced chemotherapy treatments delivered with precision and compassionate care</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">What is Chemotherapy?</h2>
+          <p class="text-gray-600 mb-6">Chemotherapy is a powerful cancer treatment that uses medications to destroy cancer cells throughout the body. Our expert oncology team provides personalized chemotherapy protocols tailored to each patient's specific cancer type, stage, and individual health profile.</p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-semibold text-[color:var(--navy)] mb-2">48A Treatment Types</h3>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>536 Intravenous (IV) chemotherapy</li>
+                <li>536 Oral chemotherapy</li>
+                <li>536 Intrathecal chemotherapy</li>
+                <li>536 Regional chemotherapy</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[color:var(--navy)] mb-2">3AF Cancer Types Treated</h3>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>536 Breast cancer</li>
+                <li>536 Lung cancer</li>
+                <li>536 Colorectal cancer</li>
+                <li>536 Lymphomas & leukemias</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Our Chemotherapy Process</h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="bg-[color:var(--accent)] text-[color:var(--navy)] rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <h3 class="font-semibold text-[color:var(--navy)]">Initial Consultation</h3>
+                <p class="text-gray-600 text-sm">Comprehensive evaluation and treatment planning with our oncology team.</p>
+              </div>
+            </div>

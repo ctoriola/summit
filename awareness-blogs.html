@@ -1,19 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - Summit Medical Services | Multidisciplinary Integrated Oncology Center</title>
-  <meta name="description" content="Learn about Summit Medical Services's mission, vision, and commitment to providing world-class cancer care through our multidisciplinary approach and expert medical team.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs — Awareness | Summit Medical Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom palette to mirror screenshot */
-    :root {
-      --navy: #1e3a8a;
-      --accent: #fbbf24;
-      --sky: #dac1f1;   /* pale section */
-      --cta-green: #c39de6; /* green CTA used in hero */
-    }
+    :root { --navy: #1e3a8a; --accent: #fbbf24; }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
@@ -37,7 +30,7 @@
             <div class="grid grid-cols-3 gap-6 p-6">
               <div>
                 <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
-                <a href="about.html" class="block py-2 text-sm text-[color:var(--accent)] font-semibold hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
+                <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
                 <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
               </div>
               <div>
@@ -161,17 +154,10 @@
     </button>
   </div>
 
+
   <!-- Sidebar Navigation -->
   <nav class="flex-1 overflow-y-auto p-6">
     <div class="space-y-6">
-      <!-- Home Link -->
-      <a href="index.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-        <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <span class="font-medium">Home</span>
-      </a>
-
       <!-- About Us Section -->
       <div class="space-y-2">
         <button id="aboutToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
@@ -213,287 +199,119 @@
 
       <!-- Services Section -->
       <div class="space-y-2">
-        <button id="cancerToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
+        <button id="servicesToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
           <div class="flex items-center space-x-2">
             <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3 0 1.306.835 2.418 2 2.83V17a1 1 0 102 0v-3.17A3.001 3.001 0 0015 11c0-1.657-1.343-3-3-3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
             </svg>
-            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Cancer Types</span>
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Services</span>
           </div>
-          <svg id="cancerChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-
-        <div id="cancerContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
+        
+        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
           <div class="space-y-1">
-            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Cancer Types</div>
-            <a href="cancer-types.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer Types</a>
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Services</div>
+            <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Services</a>
           </div>
           <div class="space-y-1">
-            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Cancer</div>
-            <a href="breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer</a>
-            <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Lung Cancer</a>
-            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gastrointestinal Cancers</a>
-            <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gynecological Cancers</a>
-            <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Genitourinary Cancers</a>
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Services</div>
+            <a href="chemotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Chemotherapy</a>
+            <a href="immunotherapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Immunotherapy</a>
+            <a href="targeted-therapy.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Targeted Therapy</a>
+            <a href="clinical-research.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Clinical Research</a>
+            <a href="palliative-care.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Palliative Care</a>
+            <a href="day-care-centre.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Day Care Centre</a>
           </div>
         </div>
-      </div>
-
-      <div class="space-y-2">
-        <button id="awarenessToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
-          <div class="flex items-center space-x-2">
-            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Awareness</span>
-          </div>
-          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
-          <div class="space-y-1">
-            <a href="awareness-blogs.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blogs</a>
-            <a href="awareness-cancer-myths.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer &amp; Myths</a>
-            <a href="awareness-campaigns.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Awareness Campaigns</a>
-            <a href="awareness-breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer Awareness</a>
-          </div>
-          <div class="space-y-1">
-            <a href="awareness-newsletter.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Newsletter</a>
-            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">HPV Vaccination</a>
-            <a href="awareness-joint-advisory.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Joint Advisory For Cancer Patients</a>
-            <a href="awareness-stories-of-resilience.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Stories of Resilience</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="border-t border-blue-700 pt-6 space-y-2">
-        <a href="contact.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <span class="font-medium">Contact</span>
-        </a>
-      </div>
-
-      <!-- CTA Button -->
-      <div class="pt-6">
-        <a href="appointment.html" class="flex items-center justify-center space-x-2 w-full bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors shadow-lg">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span>Book Appointment</span>
-        </a>
       </div>
     </div>
   </nav>
 </div>
-<!-- BREADCRUMB -->
+
 <section class="bg-gray-50 py-4">
   <div class="max-w-7xl mx-auto px-6">
     <nav class="text-sm text-gray-600">
       <a href="index.html" class="hover:text-[color:var(--navy)]">Home</a> / 
-      <span class="text-[color:var(--navy)] font-semibold">About Us</span>
+      <a href="index.html" class="hover:text-[color:var(--navy)]">Awareness</a> / 
+      <span class="text-[color:var(--navy)] font-semibold">Blogs</span>
     </nav>
   </div>
 </section>
 
-<!-- HERO SECTION -->
-<section class="py-16 bg-blue-50 border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-    <div class="lg:col-span-7 space-y-5">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">About Summit Medical Services</p>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-        Every Nigerian dealing with cancer
-        <br class="hidden sm:inline" />deserves world-class care — right here at home
-      </h1>
-      <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
-        We’re building something different: comprehensive oncology care that combines international-standard treatment with deep understanding of Nigerian culture and patient needs.
-      </p>
+<!-- MAIN CONTENT -->
+<main class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-[color:var(--navy)] mb-4">Blogs & Articles</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Expert commentary, patient stories, and practical advice to promote awareness and understanding of cancer care.</p>
     </div>
 
-    <div class="lg:col-span-5">
-      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
-        <div class="mb-4">
-          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">At a glance</div>
-          <div class="mt-1 text-sm text-gray-700">Local care. International standards. Compassion that follows you home.</div>
-        </div>
-        <div class="grid grid-cols-2 gap-3 text-xs">
-          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500">Location</div>
-            <div class="mt-1 text-base font-bold text-gray-900">Asokoro, Abuja</div>
-            <div class="mt-1 text-[11px] text-gray-500">Mambila Barracks</div>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Featured Posts</h2>
+          <article class="mb-6">
+            <h3 class="font-semibold text-[color:var(--navy)]">Early Detection: What You Need to Know</h3>
+            <p class="text-gray-600 text-sm mt-2">A practical guide on screening schedules and recognising early warning signs.</p>
+            <a href="#" class="inline-block mt-3 text-sm text-[color:var(--navy)] hover:underline">Read more →</a>
+          </article>
+
+          <article class="mb-6">
+            <h3 class="font-semibold text-[color:var(--navy)]">Nutrition During Treatment</h3>
+            <p class="text-gray-600 text-sm mt-2">Evidence-based strategies to maintain strength and wellbeing through therapy.</p>
+            <a href="#" class="inline-block mt-3 text-sm text-[color:var(--navy)] hover:underline">Read more →</a>
+          </article>
+
+          <div class="mt-8 border-t pt-6">
+            <h4 class="font-semibold">Browse by Topic</h4>
+            <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+              <a href="#" class="p-3 bg-gray-50 rounded">Prevention</a>
+              <a href="#" class="p-3 bg-gray-50 rounded">Screening</a>
+              <a href="#" class="p-3 bg-gray-50 rounded">Patient Stories</a>
+              <a href="#" class="p-3 bg-gray-50 rounded">Research & Trials</a>
+            </div>
           </div>
-          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500">Access</div>
-            <div class="mt-1 text-base font-bold text-gray-900">48–72 hrs scheduling</div>
-            <div class="mt-1 text-[11px] text-gray-500">Rapid access to consultations</div>
-          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-[color:var(--navy)] mb-6">Editorial Standards</h2>
+          <p class="text-gray-600">All blog content is reviewed by our clinical team and linked to trusted sources. If you'd like to contribute, contact our editorial team.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- OUR MISSION -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <div class="lg:col-span-7">
-      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 space-y-6">
-        <div>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Our Mission</p>
-          <h2 class="mt-2 text-2xl lg:text-3xl font-extrabold text-gray-900">Here’s what drives us every single day</h2>
+      <aside>
+        <div class="bg-[color:var(--navy)] text-white rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+          <p class="text-sm">Get updates on new articles and awareness resources.</p>
+          <a href="awareness-newsletter.html" class="mt-4 inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-2 rounded">Sign Up</a>
         </div>
-        <p class="text-gray-600">Every Nigerian dealing with cancer deserves world-class care. Right here at home. Not in India. Not in South Africa. Here. We combine the treatment standards you’d find at top international cancer centers with doctors and navigators who understand your culture and a team that treats you like family.</p>
 
-        <div class="pt-4 border-t border-gray-100">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">What we fix</h3>
-          <p class="text-gray-600">No more draining savings to travel abroad. No more abandoning treatment halfway because the system makes it too hard. No more navigating a fragmented maze alone. At Summit, you get evidence-based treatment delivered with genuine compassion, a patient navigator who checks in, and doctors who explain things in plain language.</p>
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h3 class="text-xl font-bold text-[color:var(--navy)] mb-4">Topics At A Glance</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>• Screening & Prevention</li>
+            <li>• Living with Cancer</li>
+            <li>• Support & Rehabilitation</li>
+          </ul>
         </div>
-      </div>
-    </div>
 
-    <div class="lg:col-span-5">
-      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 h-full">
-        <h3 class="text-xl font-extrabold text-gray-900 mb-4">Core Values</h3>
-        <ul class="space-y-4 text-sm text-gray-700">
-          <li>
-            <h4 class="font-semibold">We Don’t Cut Corners</h4>
-            <p class="text-gray-600">Excellence is the baseline: cleanroom pharmacy standards, evidence-based protocols, and relentless attention to safety.</p>
-          </li>
-          <li>
-            <h4 class="font-semibold">Compassion Isn’t a Buzzword Here</h4>
-            <p class="text-gray-600">We treat people as people—receptionists learn names, nurses listen, and our financial counselor fights for coverage.</p>
-          </li>
-          <li>
-            <h4 class="font-semibold">You’re a Person, Not a Case Number</h4>
-            <p class="text-gray-600">Decisions start with what’s best for YOU—your family, your work, your life—not convenience or protocol alone.</p>
-          </li>
-          <li>
-            <h4 class="font-semibold">We Respect Your Culture</h4>
-            <p class="text-gray-600">We honor religious observances, family decision-making styles, and safe traditional practices when appropriate.</p>
-          </li>
-          <li>
-            <h4 class="font-semibold">We Tell You Straight</h4>
-            <p class="text-gray-600">Clear pricing, honest prognosis conversations, and plain-language explanations are how we earn your trust.</p>
-          </li>
-          <li>
-            <h4 class="font-semibold">We Stay Sharp</h4>
-            <p class="text-gray-600">Our team attends international conferences and maintains active memberships so your care benefits from the latest evidence.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OUR STORY -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-8 max-w-3xl mx-auto">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Our Story</p>
-      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900 mb-2">How Summit Started</h2>
-      <p class="text-gray-600">Summit Medical Services began when three doctors stopped asking "why" and started building a solution that kept patients in Nigeria, cared for by teams who understand them.</p>
-    </div>
-
-    <div class="prose max-w-none text-gray-700">
-      <p>Dr. Shagaya Uchechukwu remembers a woman diagnosed with Stage II breast cancer—completely treatable—who abandoned treatment because travel costs and access made it impossible to continue. Dr. Nwachukwu Emmanuella and Prof. Chiedozi saw the same stories repeatedly: patients who should have survived, lost to a fragmented system.</p>
-      <p>In 2025, they stopped complaining and started building. Summit opened in Mambila Barracks, Asokoro—close to central Abuja and easy to reach. They built a cleanroom pharmacy, comfortable infusion chairs, and hired nurses who listen. Most importantly, they built a team that refuses to let patients disappear: navigators who send reminders, financial counselors who help secure coverage, and doctors who explain treatment plans until patients understand.</p>
-      <blockquote class="border-l-4 pl-4 italic text-gray-600">“For the first time since my diagnosis, I don’t feel alone.” — a recent patient</blockquote>
-      <p>That’s what Summit is. You’re not alone anymore.</p>
-    </div>
-  </div>
-</section>
-
-<!-- LEADERSHIP -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-8 max-w-2xl mx-auto">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Meet our leadership</p>
-      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900 mb-2">The team leading Summit</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <!-- photo placeholder -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold text-[color:var(--navy)] mb-4">Contact</h3>
+          <p class="text-sm text-gray-600">Questions about content? <a href="contact.html" class="text-[color:var(--navy)] hover:underline">Contact our team</a>.</p>
         </div>
-        <h3 class="text-xl font-bold text-gray-900">Dr. Shagaya Uchechukwu, MBBS, FWACS</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Executive Director of Administration</p>
-        <p class="text-sm text-gray-600 mt-3">A familiar voice on health programmes who explains complex medical concepts in plain language. Leads community education and strategic partnerships.</p>
-        <p class="text-xs text-gray-500 mt-3">Email: <a href="mailto:uchechukwushagaya@gmail.com" class="text-[color:var(--navy)]">uchechukwushagaya@gmail.com</a></p>
-      </article>
+      </aside>
+    </div>
 
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <!-- photo placeholder -->
-        </div>
-        <h3 class="text-xl font-bold text-gray-900">Dr. Nwachukwu Emmanuella, MBBS, FWACS</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Executive Director of Clinical Services</p>
-        <p class="text-sm text-gray-600 mt-3">Known by patients as Dr. Ella—rigorous, warm, and dedicated to individualized treatment plans.</p>
-        <p class="text-xs text-gray-500 mt-3">Email: <a href="mailto:drellanwachukwu@gmail.com" class="text-[color:var(--navy)]">drellanwachukwu@gmail.com</a></p>
-      </article>
-
-      <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center">
-        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-          <!-- photo placeholder -->
-        </div>
-        <h3 class="text-xl font-bold text-gray-900">Prof. Lawerence Chiedozi</h3>
-        <p class="text-[color:var(--navy)] font-semibold">Executive Director</p>
-        <p class="text-sm text-gray-600 mt-3">Decades of experience in teaching hospitals, research, and healthcare policy; focused on building sustainable systems.</p>
-        <p class="text-xs text-gray-500 mt-3">Email: <a href="mailto:cchiedozi@gmail.com" class="text-[color:var(--navy)]">cchiedozi@gmail.com</a></p>
-      </article>
+    <div class="mt-12 bg-white rounded-lg shadow-lg p-8 text-center">
+      <h3 class="text-xl font-semibold">Want resources or a talk at your event?</h3>
+      <p class="mt-2 text-gray-600">We can provide speakers and materials for community awareness programs.</p>
+      <a href="contact.html" class="mt-4 inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-6 py-3 rounded font-semibold">Contact Us</a>
     </div>
   </div>
-</section>
-
-<!-- ACCREDITATIONS & WHY IT MATTERS -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-6 max-w-2xl mx-auto">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Quality & safety</p>
-      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900 mb-2">Accreditations & Credentials</h2>
-      <p class="text-gray-600">We follow international standards and hold credentials that ensure safety and up-to-date care.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 text-center">
-        <h4 class="font-semibold">American Association for Cancer Research (AACR)</h4>
-        <p class="text-sm text-gray-600 mt-2">Our directors are active members, connecting us to the latest research.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 text-center">
-        <h4 class="font-semibold">Fellowship of the West African College of Surgeons (FWACS)</h4>
-        <p class="text-sm text-gray-600 mt-2">Clinical excellence rooted in regional surgical training and coordination.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 text-center">
-        <h4 class="font-semibold">Regulatory & Safety</h4>
-        <p class="text-sm text-gray-600 mt-2">Licensed with the Federal Ministry of Health, Pharmacists Council of Nigeria, NAFDAC, and MDCN; cleanroom pharmacy and ASCO-aligned chemotherapy protocols.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="py-16 bg-[color:var(--navy)] text-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Take the Next Step?</h2>
-    <p class="text-xl mb-6 opacity-90">Whether you’re newly diagnosed, seeking a second opinion, or tired of fragmented care, we’re here.</p>
-
-    <div class="max-w-xl mx-auto text-sm text-gray-200 mb-6 prose">
-      <p><strong>Reach Us:</strong><br/>Phone: [Your phone number]<br/>Email: <a href="mailto:info@summitoncology.com" class="text-white underline">info@summitoncology.com</a><br/>Location: DIA Road, Asokoro, Abuja (Mambila Barracks)</p>
-      <p><strong>Schedule a consultation:</strong> Most patients get scheduled within 48–72 hours.</p>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="appointment.html" class="bg-[color:var(--accent)] text-[color:var(--navy)] px-8 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">Book Appointment</a>
-      <a href="contact.html" class="border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[color:var(--navy)] transition">Contact Us</a>
-    </div>
-  </div>
-</section>
-              
+</main>
 
 <!-- FOOTER -->
 <footer class="bg-gray-50">
@@ -511,7 +329,6 @@
         <li><a href="services.html" class="hover:text-[color:var(--navy)]">Services</a></li>
         <li><a href="doctors.html" class="hover:text-[color:var(--navy)]">Doctors</a></li>
         <li><a href="contact.html" class="hover:text-[color:var(--navy)]">Contact</a></li>
-        <li><a href="appointment.html" class="hover:text-[color:var(--navy)]">Book Appointment</a></li>
       </ul>
     </div>
     <div>
@@ -527,30 +344,10 @@
       <div class="text-sm text-gray-600 mt-3">
         <p>DIA Road, Asokoro<br/>Mambila Barracks, Abuja<br/>Nigeria</p>
         <p class="mt-2">Phone: [Your phone number]<br/>Email: info@summitoncology.com</p>
-        <div class="flex space-x-3 mt-3">
-          <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
-          <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
-          <a href="#" class="text-pink-600 hover:text-pink-800">Instagram</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="border-t bg-white py-4">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-gray-600">
-      <div>© 2025 Summit Medical Services. All rights reserved.</div>
-      <div class="flex items-center space-x-3">
-        <a href="#" class="hover:underline">Privacy</a>
-        <a href="#" class="hover:underline">Terms</a>
       </div>
     </div>
   </div>
 </footer>
-
-<!-- FLOATING CONTACTS -->
-<div class="fixed right-4 bottom-24 space-y-3">
-  <a href="https://wa.me/" class="block bg-green-600 text-white p-3 rounded-full shadow">WA</a>
-  <a href="tel:+123456789" class="block bg-[color:var(--accent)] text-[color:var(--navy)] p-3 rounded-full shadow">Call</a>
-</div>
 
 <!-- Mobile sidebar script -->
 <script>
@@ -570,17 +367,6 @@
       menu.classList.add('-translate-x-full');
       overlay.classList.add('hidden');
       document.body.style.overflow = ''; // Restore body scroll
-    }
-
-    // Header shadow on scroll (copied from index)
-    const header = document.getElementById('siteHeader');
-    if (header) {
-      const checkHeader = () => {
-        if (window.scrollY > 8) header.classList.add('shadow-md');
-        else header.classList.remove('shadow-md');
-      };
-      checkHeader();
-      window.addEventListener('scroll', checkHeader, { passive: true });
     }
     
     if (btn && menu && overlay) {
@@ -631,10 +417,6 @@
     const cancerToggleBtn = document.getElementById('cancerToggleBtn');
     const cancerContent = document.getElementById('cancerContent');
     const cancerChevron = document.getElementById('cancerChevron');
-
-    const awarenessToggleBtn = document.getElementById('awarenessToggleBtn');
-    const awarenessContent = document.getElementById('awarenessContent');
-    const awarenessChevron = document.getElementById('awarenessChevron');
     
     // Initialize sections as collapsed
     if (aboutContent) {
@@ -649,11 +431,6 @@
     if (cancerContent) {
       cancerContent.style.maxHeight = '0px';
       cancerContent.style.opacity = '0';
-    }
-
-    if (awarenessContent) {
-      awarenessContent.style.maxHeight = '0px';
-      awarenessContent.style.opacity = '0';
     }
     
     // About Us toggle functionality
@@ -710,24 +487,6 @@
       });
     }
 
-    // Awareness mobile toggle
-    if (awarenessToggleBtn && awarenessContent && awarenessChevron) {
-      awarenessToggleBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const isExpanded = awarenessContent.style.maxHeight !== '0px';
-
-        if (isExpanded) {
-          awarenessContent.style.maxHeight = '0px';
-          awarenessContent.style.opacity = '0';
-          awarenessChevron.style.transform = 'rotate(0deg)';
-        } else {
-          awarenessContent.style.maxHeight = awarenessContent.scrollHeight + 'px';
-          awarenessContent.style.opacity = '1';
-          awarenessChevron.style.transform = 'rotate(180deg)';
-        }
-      });
-    }
-
     // About Us dropdown functionality
     const aboutBtn = document.getElementById('aboutDropdownBtn');
     const aboutDropdown = document.getElementById('aboutDropdown');
@@ -751,14 +510,6 @@
         if (cancerDropdown && cancerBtn) {
           cancerDropdown.classList.add('opacity-0', 'invisible');
           cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
-        }
-
-        // Close awareness dropdown if open
-        const awarenessDropdown = document.getElementById('awarenessDropdown');
-        const awarenessBtn = document.getElementById('awarenessDropdownBtn');
-        if (awarenessDropdown && awarenessBtn) {
-          awarenessDropdown.classList.add('opacity-0', 'invisible');
-          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
         
         if (isVisible) {
@@ -800,14 +551,6 @@
           cancerDropdown.classList.add('opacity-0', 'invisible');
           cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
-
-        // Close awareness dropdown if open
-        const awarenessDropdown = document.getElementById('awarenessDropdown');
-        const awarenessBtn = document.getElementById('awarenessDropdownBtn');
-        if (awarenessDropdown && awarenessBtn) {
-          awarenessDropdown.classList.add('opacity-0', 'invisible');
-          awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
-        }
         
         if (isVisible) {
           servicesDropdown.classList.add('opacity-0', 'invisible');
@@ -847,14 +590,6 @@
         if (servicesDropdownLocal && servicesBtnLocal) {
           servicesDropdownLocal.classList.add('opacity-0', 'invisible');
           servicesBtnLocal.querySelector('svg').style.transform = 'rotate(0deg)';
-        }
-
-        // Close awareness dropdown if open
-        const awarenessDropdownLocal = document.getElementById('awarenessDropdown');
-        const awarenessBtnLocal = document.getElementById('awarenessDropdownBtn');
-        if (awarenessDropdownLocal && awarenessBtnLocal) {
-          awarenessDropdownLocal.classList.add('opacity-0', 'invisible');
-          awarenessBtnLocal.querySelector('svg').style.transform = 'rotate(0deg)';
         }
 
         if (isVisible) {
@@ -921,6 +656,168 @@
         }
       });
     }
+  });
+</script>
+
+<!-- Animation and Scroll Effects Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Scroll Reveal Animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          
+          // Trigger counter animation if it's a counter element
+          const counter = entry.target.querySelector('.counter');
+          if (counter) {
+            animateCounter(counter);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter Animation
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        // Format the number display
+        if (target >= 1000) {
+          element.textContent = Math.floor(current).toLocaleString() + '+';
+        } else {
+          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+        }
+      }, 16);
+    }
+
+    // Add hover effects to buttons and cards
+    const buttons = document.querySelectorAll('a[href], button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+      });
+      
+      button.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Floating animation for call-to-action buttons
+    const ctaButtons = document.querySelectorAll('.animate-pulse-slow');
+    ctaButtons.forEach(button => {
+      let direction = 1;
+      setInterval(() => {
+        const currentTransform = button.style.transform || 'translateY(0px)';
+        const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/) || [0, 0])[1];
+        const newY = currentY + (direction * 2);
+        
+        if (Math.abs(newY) > 5) {
+          direction *= -1;
+        }
+        
+        button.style.transform = `translateY(${newY}px)`;
+      }, 100);
+    });
+
+    // Parallax effect for hero images
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero-slide img');
+      
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Add loading animation to forms
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"], input[type="submit"]');
+        if (submitBtn) {
+          submitBtn.innerHTML = 'Loading<span class="loading-dots"></span>';
+          submitBtn.disabled = true;
+        }
+      });
+    });
+
+    // Staggered animation for grid items
+    const gridItems = document.querySelectorAll('.grid > div, .grid > article');
+    gridItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.1}s`;
+      item.classList.add('animate-fade-in-up');
+    });
+
+    // Add ripple effect to buttons
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+      circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+      circle.classList.add('ripple');
+
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    }
+
+    // Add ripple effect CSS
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+      }
+      
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(rippleStyle);
+
+    // Apply ripple effect to buttons
+    const rippleButtons = document.querySelectorAll('button, .btn, a[href*="appointment"]');
+    rippleButtons.forEach(button => {
+      button.style.position = 'relative';
+      button.style.overflow = 'hidden';
+      button.addEventListener('click', createRipple);
+    });
   });
 </script>
 

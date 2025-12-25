@@ -1,3 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services - Summit Medical Services | Cancer Treatment & Care Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --navy:#1e3a8a;
+      --sky:#EABDE6;
+      --accent:#fbbf24;
+      --cta-green:#c39de6
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+
+<!-- HEADER -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm text-gray-900 border-b border-gray-200 transition-shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center justify-between flex-1">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-20 w-auto">
+      <nav class="hidden md:flex flex-1 justify-center space-x-8 text-lg mx-8">
+        <a href="index.html" class="hover:underline">Home</a>
+        <div class="relative">
+          <button id="aboutDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>About Us</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="aboutDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-3 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">About</div>
+                <a href="about.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">About Us</a>
+                <a href="our-team.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Our Team</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Conference</div>
+                <a href="sabcs-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2024</a>
+                <a href="sabcs-2025.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">SABCS 2025</a>
+                <a href="ismpo.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">ISMPO</a>
+                <a href="bowclc-2024.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">BoWCLC-2024</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Investor</div>
+                <a href="corporate-filing.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Corporate Filing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="servicesDropdownBtn" class="inline-flex items-center hover:underline focus:outline-none">
+            <span>Services</span>
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="servicesDropdown" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-3xl bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible transition-all duration-150 z-50">
+            <div class="grid grid-cols-2 gap-6 p-6">
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">All Services</div>
+                <a href="services.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded text-[color:var(--accent)] font-semibold">Services</a>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Most Visited Services</div>
+                <a href="chemotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Chemotherapy</a>
+                <a href="immunotherapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Immunotherapy</a>
+                <a href="targeted-therapy.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Targeted Therapy</a>
+                <a href="clinical-research.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Clinical Research</a>
+                <a href="palliative-care.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Palliative Care</a>
+                <a href="day-care-centre.html" class="block py-2 text-sm hover:text-[color:var(--navy)] hover:bg-gray-50 px-3 rounded">Day Care Centre</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="doctors.html" class="hover:underline">Doctors</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+    <div class="flex items-center space-x-3">
+      <a href="appointment.html" class="hidden md:inline-block bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-2 rounded-md font-semibold">Book Appointment</a>
+      <!-- mobile menu button -->
+      <button class="md:hidden" id="mobileMenuBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  
+</header>
+
 <!-- Mobile Sidebar Overlay -->
 <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
@@ -6,7 +99,7 @@
   <!-- Sidebar Header -->
   <div class="flex items-center justify-between p-6 border-b border-blue-700 flex-shrink-0">
     <div class="flex items-center space-x-3">
-      <img src="assets/img/logo.png" alt="MIOC Logo" class="h-12 w-auto filter brightness-0 invert">
+      <img src="assets/img/logo.png" alt="Summit Medical Services Logo" class="h-12 w-auto filter brightness-0 invert">
     </div>
     <button id="closeSidebarBtn" class="p-2 hover:bg-blue-800 rounded-lg transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,12 +128,12 @@
             </svg>
             <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">About Us</span>
           </div>
-          <svg id="aboutChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" style="transform: rotate(0deg);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="aboutChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         
-        <div id="aboutContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300 max-h-0 opacity-0" style="max-height: 0px; opacity: 0;">
+        <div id="aboutContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
           <!-- About Sub-section -->
           <div class="space-y-1">
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">About</div>
@@ -48,9 +141,9 @@
             <a href="our-team.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Our Team</a>
           </div>
 
-          <!-- Workshops Sub-section -->
+          <!-- Conference Sub-section -->
           <div class="space-y-1">
-            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Workshops</div>
+            <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Conference</div>
             <a href="sabcs-2024.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2024</a>
             <a href="sabcs-2025.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">SABCS 2025</a>
             <a href="ismpo.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">ISMPO</a>
@@ -74,15 +167,15 @@
             </svg>
             <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Services</span>
           </div>
-          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" style="transform: rotate(0deg);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="servicesChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         
-        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300 max-h-0 opacity-0" style="max-height: 0px; opacity: 0;">
+        <div id="servicesContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
           <div class="space-y-1">
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Services</div>
-            <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Services</a>
+            <a href="services.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-[color:var(--accent)] font-semibold ml-2">Services</a>
           </div>
           <div class="space-y-1">
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Services</div>
@@ -95,7 +188,6 @@
           </div>
         </div>
       </div>
-
       <!-- Cancer Types Section -->
       <div class="space-y-2">
         <button id="cancerToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
@@ -105,12 +197,12 @@
             </svg>
             <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Cancer Types</span>
           </div>
-          <svg id="cancerChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" style="transform: rotate(0deg);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="cancerChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
 
-        <div id="cancerContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300 max-h-0 opacity-0" style="max-height: 0px; opacity: 0;">
+        <div id="cancerContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
           <div class="space-y-1">
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">All Cancer Types</div>
             <a href="cancer-types.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer Types</a>
@@ -119,14 +211,13 @@
             <div class="text-xs font-semibold text-blue-200 uppercase tracking-wide px-2 py-1">Most Visited Cancer</div>
             <a href="breast-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Breast Cancer</a>
             <a href="brain-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Lung Cancer</a>
-            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gastrointestinal Cancers</a>
+            <a href="prostate-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Prostate Cancer</a>
             <a href="kidney-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Gynecological Cancers</a>
             <a href="blood-cancer.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Genitourinary Cancers</a>
           </div>
         </div>
       </div>
 
-      <!-- Main Navigation -->
       <div class="space-y-2">
         <button id="awarenessToggleBtn" class="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-800 rounded-lg transition-colors">
           <div class="flex items-center space-x-2">
@@ -135,12 +226,12 @@
             </svg>
             <span class="text-sm font-semibold uppercase tracking-wide text-blue-300">Awareness</span>
           </div>
-          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" style="transform: rotate(0deg);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="awarenessChevron" class="w-4 h-4 text-blue-300 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
 
-        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300 max-h-0 opacity-0" style="max-height: 0px; opacity: 0;">
+        <div id="awarenessContent" class="ml-6 space-y-1 overflow-hidden transition-all duration-300">
           <div class="space-y-1">
             <a href="awareness-blogs.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Blogs</a>
             <a href="awareness-cancer-myths.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Cancer &amp; Myths</a>
@@ -149,30 +240,4 @@
           </div>
           <div class="space-y-1">
             <a href="awareness-newsletter.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Newsletter</a>
-            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">HPV Vaccination</a>
-            <a href="awareness-joint-advisory.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Joint Advisory For Cancer Patients</a>
-            <a href="awareness-stories-of-resilience.html" class="block p-2 rounded-lg hover:bg-blue-800 transition-colors text-blue-100 hover:text-white ml-2">Stories of Resilience</a>
-          </div>
-        </div>
-      </div>
-        
-        <a href="contact.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-800 transition-colors group">
-          <svg class="w-5 h-5 text-blue-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <span class="font-medium">Contact</span>
-        </a>
-      </div>
-
-      <!-- CTA Button -->
-      <div class="pt-6">
-        <a href="appointment.html" class="flex items-center justify-center space-x-2 w-full bg-[color:var(--accent)] text-[color:var(--navy)] px-4 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors shadow-lg">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span>Book Appointment</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-</div>
+            <a href="awareness-hpv-vaccination.html" class="block p-2 rounded... (truncated)
