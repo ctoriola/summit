@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Team - Summit Medical Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --navy: #1e3a8a;
@@ -334,47 +335,63 @@
 <section class="py-16 bg-blue-50 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
     <div class="lg:col-span-7 space-y-5">
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Team</p>
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Doctors</p>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-        Our Team
+        Our expert team
+        <br class="hidden sm:inline" />
+        behind every treatment plan
       </h1>
       <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
-        Meet the dedicated professionals who make Summit Medical Services a leader in medical innovation and patient care.
+        Meet our world-class oncologists and specialists who work together in multidisciplinary tumor boards to design individualized treatment plans.
       </p>
 
       <div class="flex flex-wrap gap-3">
         <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
           <span class="w-2 h-2 rounded-full bg-[color:var(--navy)] mr-2"></span>
-          Clinical leadership &amp; oncology
+          Medical, surgical, radiation oncology & hematology
         </div>
         <div class="inline-flex items-center px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-700">
           <span class="w-2 h-2 rounded-full bg-[color:var(--accent)] mr-2"></span>
-          Research, trials &amp; patient care
+          Multidisciplinary tumor boards
         </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="appointment.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--cta-green)] text-white font-semibold shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-transform transition-shadow duration-200">
+          Book an appointment
+        </a>
+        <a href="services.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-semibold bg-white hover:-translate-y-0.5 hover:shadow-md transition-transform transition-shadow duration-200">
+          Explore our services
+        </a>
       </div>
     </div>
 
     <div class="lg:col-span-5">
       <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 sm:p-7">
         <div class="mb-4">
-          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Team snapshot</div>
-          <div class="mt-1 text-sm text-gray-700">A multidisciplinary group across research, clinical care, and operations.</div>
+          <div class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Clinical leadership</div>
+          <div class="mt-1 text-sm text-gray-700">Experienced oncologists coordinating care across specialties.</div>
         </div>
-        <div class="grid grid-cols-3 gap-3 text-xs">
+        <div class="grid grid-cols-2 gap-3 text-xs">
           <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500">Oncologists</div>
-            <div class="mt-1 text-base font-bold text-gray-900">Senior</div>
-            <div class="mt-1 text-[11px] text-gray-500">Leaders in care</div>
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Experience</div>
+            <div class="mt-1 text-base font-bold text-gray-900">10+ yrs</div>
+            <div class="mt-1 text-[11px] text-gray-500">Average consultant experience</div>
           </div>
           <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500">Research</div>
-            <div class="mt-1 text-base font-bold text-gray-900">Directors</div>
-            <div class="mt-1 text-[11px] text-gray-500">Driving innovation</div>
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Team</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Multidisciplinary</div>
+            <div class="mt-1 text-[11px] text-gray-500">Joint tumor boards</div>
           </div>
           <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500">Operations</div>
-            <div class="mt-1 text-base font-bold text-gray-900">Clinical</div>
-            <div class="mt-1 text-[11px] text-gray-500">Coordinated care</div>
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Focus</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Site-specific</div>
+            <div class="mt-1 text-[11px] text-gray-500">Disease-wise expertise</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 flex flex-col justify-between">
+            <div class="text-[11px] uppercase tracking-wide text-gray-500">Support</div>
+            <div class="mt-1 text-base font-bold text-gray-900">Whole-person</div>
+            <div class="mt-1 text-[11px] text-gray-500">Clinical + supportive care</div>
           </div>
         </div>
       </div>
@@ -382,96 +399,184 @@
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<main class="py-16 bg-white">
+<!-- DOCTORS GRID -->
+<section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Team Member 1 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Sarah Johnson</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Chief Medical Officer</p>
-          <p class="text-gray-600 text-sm">Leading medical research and innovation with over 15 years of experience in oncology and clinical trials.</p>
-        </div>
-      </div>
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--navy)]">Clinical team</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold text-gray-900">Our doctors at Summit Medical Services</h2>
+      <p class="mt-3 text-sm sm:text-base text-gray-600">Meet the multidisciplinary team of medical, surgical, radiation oncologists and hematologists who guide your care.</p>
+    </div>
 
-      <!-- Team Member 2 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Michael Chen</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Research Director</p>
-          <p class="text-gray-600 text-sm">Pioneering breakthrough treatments and leading our research initiatives in precision medicine.</p>
-        </div>
-      </div>
+    <!-- Medical Oncology -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Medical Oncology</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1594824475317-8b7d0e8e4b1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Sarah Johnson" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Sarah Johnson</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Senior Medical Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, AIIMS Delhi</p>
+          <p class="text-sm text-gray-600">15+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Breast Cancer, Lung Cancer, Immunotherapy</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-      <!-- Team Member 3 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Emily Rodriguez</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Clinical Operations Manager</p>
-          <p class="text-gray-600 text-sm">Ensuring the highest standards of patient care and clinical trial management.</p>
-        </div>
-      </div>
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Rajesh Gupta" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Rajesh Gupta</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Medical Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, PGI Chandigarh</p>
+          <p class="text-sm text-gray-600">12+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">GI Cancers, Precision Medicine</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-      <!-- Team Member 4 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. James Wilson</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Senior Oncologist</p>
-          <p class="text-gray-600 text-sm">Specialized in advanced cancer treatments and patient-centered care approaches.</p>
-        </div>
-      </div>
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Priya Sharma" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Priya Sharma</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Medical Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DM Medical Oncology, CMC Vellore</p>
+          <p class="text-sm text-gray-600">10+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Gynecologic Oncology, Clinical Trials</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
 
-      <!-- Team Member 5 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Lisa Thompson</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Head of Clinical Trials</p>
-          <p class="text-gray-600 text-sm">Leading innovative clinical trials and advancing medical research for better patient outcomes.</p>
-        </div>
       </div>
+    </div>
 
-      <!-- Team Member 6 -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-transform duration-200">
-        <div class="h-64 bg-gray-200 flex items-center justify-center">
-          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[color:var(--navy)] mb-2">Dr. Robert Kim</h3>
-          <p class="text-[color:var(--accent)] font-medium mb-3">Medical Affairs Director</p>
-          <p class="text-gray-600 text-sm">Bridging clinical research and medical practice to deliver cutting-edge treatments.</p>
-        </div>
+    <!-- Radiation Oncology -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Radiation Oncology</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Michael Chen" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Michael Chen</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Senior Radiation Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DNB Radiation Oncology</p>
+          <p class="text-sm text-gray-600">14+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">IMRT, VMAT, Stereotactic Radiosurgery</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Anjali Patel" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Anjali Patel</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Radiation Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DNB Radiation Oncology</p>
+          <p class="text-sm text-gray-600">8+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Brachytherapy, Pediatric Radiation</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Surgical Oncology -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Surgical Oncology</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emily Rodriguez" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Emily Rodriguez</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Senior Surgical Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MS, MCh Surgical Oncology</p>
+          <p class="text-sm text-gray-600">18+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Robotic Surgery, Complex Resections</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Vikram Singh" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. Vikram Singh</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Surgical Oncologist</p>
+          <p class="text-sm text-gray-600 mt-2">MS, MCh Surgical Oncology</p>
+          <p class="text-sm text-gray-600">12+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Hepatobiliary Surgery, GI Oncology</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Hematology -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Hematology &amp; BMT</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <article class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 text-center flex flex-col items-center transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl">
+          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. David Kumar" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Dr. David Kumar</h3>
+          <p class="text-[color:var(--navy)] font-semibold">Senior Hematologist</p>
+          <p class="text-sm text-gray-600 mt-2">MD, DM Hematology</p>
+          <p class="text-sm text-gray-600">16+ years experience</p>
+          <div class="mt-4">
+            <p class="text-xs text-gray-500">Specializes in:</p>
+            <p class="text-sm">Leukemia, Lymphoma, BMT</p>
+          </div>
+          <a href="appointment.html" class="mt-4 inline-flex items-center justify-center bg-[color:var(--cta-green)] text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-[color:var(--navy)] text-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-white/5 rounded-3xl border border-white/20 px-6 py-10 sm:px-10 text-center shadow-xl">
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">Next step</p>
+      <h2 class="mt-3 text-2xl lg:text-3xl font-extrabold mb-3">Schedule a Consultation</h2>
+      <p class="text-sm sm:text-base mb-8 text-white/90">Our expert team is ready to provide you with personalized care</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="appointment.html" class="inline-flex items-center justify-center bg-[color:var(--accent)] text-[color:var(--navy)] px-8 py-3 rounded-md font-semibold shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-transform transition-shadow duration-200">Book Appointment</a>
+        <a href="contact.html" class="inline-flex items-center justify-center border border-white/70 text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[color:var(--navy)] transition-colors duration-200">Contact Us</a>
       </div>
     </div>
   </div>
-</main>
+</section>
 
 <!-- FOOTER -->
 <footer class="bg-gray-50">
@@ -487,7 +592,7 @@
         <li><a href="index.html" class="hover:text-[color:var(--navy)]">Home</a></li>
         <li><a href="about.html" class="hover:text-[color:var(--navy)]">About Us</a></li>
         <li><a href="services.html" class="hover:text-[color:var(--navy)]">Services</a></li>
-        <li><a href="doctors.html" class="hover:text-[color:var(--navy)]">Doctors</a></li>
+        <li><a href="our-team.html" class="hover:text-[color:var(--navy)]">Doctors</a></li>
         <li><a href="contact.html" class="hover:text-[color:var(--navy)]">Contact</a></li>
         <li><a href="appointment.html" class="hover:text-[color:var(--navy)]">Book Appointment</a></li>
       </ul>
@@ -504,7 +609,7 @@
       <h5 class="font-semibold">Contact</h5>
       <div class="text-sm text-gray-600 mt-3">
         <p>DIA Road, Asokoro<br/>Mambila Barracks, Abuja<br/>Nigeria</p>
-        <p class="mt-2">Phone: [Your phone number]<br/>Email: info@summitoncology.com</p>
+        <p class="mt-2">Phone: +234 818 427 6466, <br>+234 806 336 0884<br/>Email: info@summitoncology.com</p>
         <div class="flex space-x-3 mt-3">
           <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
           <a href="#" class="text-blue-400 hover:text-blue-600">Twitter</a>
@@ -526,8 +631,14 @@
 
 <!-- FLOATING CONTACTS -->
 <div class="fixed right-4 bottom-24 space-y-3">
-  <a href="https://wa.me/" class="block bg-green-600 text-white p-3 rounded-full shadow">WA</a>
-  <a href="tel:+123456789" class="block bg-[color:var(--accent)] text-[color:var(--navy)] p-3 rounded-full shadow">Call</a>
+  <a href="https://wa.me/234818427646" class="block bg-green-600 text-white p-3 rounded-full shadow hover:bg-green-700 transition-colors" title="WhatsApp">
+    <i class="fab fa-whatsapp text-xl"></i>
+  </a>
+  <a href="tel:+2348184276466" class="block bg-[color:var(--accent)] text-[color:var(--navy)] p-3 rounded-full shadow hover:opacity-80 transition-opacity" title="Call">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+    </svg>
+  </a>
 </div>
 
 <!-- Mobile sidebar script -->
@@ -592,6 +703,7 @@
     if (aboutBtn && aboutDropdown) {
       aboutBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const isVisible = !aboutDropdown.classList.contains('opacity-0');
         
         // Close services dropdown if open
@@ -609,8 +721,15 @@
         }
       });
 
+      // Stop propagation when clicking inside the dropdown content
+      aboutDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       document.addEventListener('click', (e) => {
-        if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
+        const isInButton = aboutBtn.contains(e.target);
+        const isInDropdown = aboutDropdown.contains(e.target);
+        if (!isInButton && !isInDropdown) {
           aboutDropdown.classList.add('opacity-0', 'invisible');
           aboutBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
@@ -620,6 +739,7 @@
     if (servicesBtn && servicesDropdown) {
       servicesBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const isVisible = !servicesDropdown.classList.contains('opacity-0');
 
         // Close about dropdown if open
@@ -637,8 +757,15 @@
         }
       });
 
+      // Stop propagation when clicking inside the dropdown content
+      servicesDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       document.addEventListener('click', (e) => {
-        if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+        const isInButton = servicesBtn.contains(e.target);
+        const isInDropdown = servicesDropdown.contains(e.target);
+        if (!isInButton && !isInDropdown) {
           servicesDropdown.classList.add('opacity-0', 'invisible');
           servicesBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
@@ -652,6 +779,7 @@
     if (cancerBtn && cancerDropdown) {
       cancerBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const isVisible = !cancerDropdown.classList.contains('opacity-0');
 
         // Close about dropdown if open
@@ -685,8 +813,15 @@
         }
       });
 
+      // Stop propagation when clicking inside the dropdown content
+      cancerDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       document.addEventListener('click', (e) => {
-        if (!cancerBtn.contains(e.target) && !cancerDropdown.contains(e.target)) {
+        const isInButton = cancerBtn.contains(e.target);
+        const isInDropdown = cancerDropdown.contains(e.target);
+        if (!isInButton && !isInDropdown) {
           cancerDropdown.classList.add('opacity-0', 'invisible');
           cancerBtn.querySelector('svg').style.transform = 'rotate(0deg)';
         }
@@ -700,6 +835,7 @@
     if (awarenessBtn && awarenessDropdown) {
       awarenessBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const isVisible = !awarenessDropdown.classList.contains('opacity-0');
 
         // Close about dropdown if open
@@ -733,10 +869,94 @@
         }
       });
 
+      // Stop propagation when clicking inside the dropdown content
+      awarenessDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       document.addEventListener('click', (e) => {
-        if (!awarenessBtn.contains(e.target) && !awarenessDropdown.contains(e.target)) {
+        const isInButton = awarenessBtn.contains(e.target);
+        const isInDropdown = awarenessDropdown.contains(e.target);
+        if (!isInButton && !isInDropdown) {
           awarenessDropdown.classList.add('opacity-0', 'invisible');
           awarenessBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Sidebar dropdown toggles
+    const aboutToggleBtn = document.getElementById('aboutToggleBtn');
+    const aboutContent = document.getElementById('aboutContent');
+    const aboutChevron = document.getElementById('aboutChevron');
+
+    if (aboutToggleBtn && aboutContent) {
+      aboutToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = aboutContent.style.maxHeight && aboutContent.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+          aboutContent.style.maxHeight = '0px';
+          aboutChevron.style.transform = 'rotate(0deg)';
+        } else {
+          aboutContent.style.maxHeight = aboutContent.scrollHeight + 'px';
+          aboutChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    const servicesToggleBtn = document.getElementById('servicesToggleBtn');
+    const servicesContent = document.getElementById('servicesContent');
+    const servicesChevron = document.getElementById('servicesChevron');
+
+    if (servicesToggleBtn && servicesContent) {
+      servicesToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = servicesContent.style.maxHeight && servicesContent.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+          servicesContent.style.maxHeight = '0px';
+          servicesChevron.style.transform = 'rotate(0deg)';
+        } else {
+          servicesContent.style.maxHeight = servicesContent.scrollHeight + 'px';
+          servicesChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    const cancerToggleBtn = document.getElementById('cancerToggleBtn');
+    const cancerContent = document.getElementById('cancerContent');
+    const cancerChevron = document.getElementById('cancerChevron');
+
+    if (cancerToggleBtn && cancerContent) {
+      cancerToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = cancerContent.style.maxHeight && cancerContent.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+          cancerContent.style.maxHeight = '0px';
+          cancerChevron.style.transform = 'rotate(0deg)';
+        } else {
+          cancerContent.style.maxHeight = cancerContent.scrollHeight + 'px';
+          cancerChevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    const awarenessToggleBtn = document.getElementById('awarenessToggleBtn');
+    const awarenessContent = document.getElementById('awarenessContent');
+    const awarenessChevron = document.getElementById('awarenessChevron');
+
+    if (awarenessToggleBtn && awarenessContent) {
+      awarenessToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = awarenessContent.style.maxHeight && awarenessContent.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+          awarenessContent.style.maxHeight = '0px';
+          awarenessChevron.style.transform = 'rotate(0deg)';
+        } else {
+          awarenessContent.style.maxHeight = awarenessContent.scrollHeight + 'px';
+          awarenessChevron.style.transform = 'rotate(180deg)';
         }
       });
     }
@@ -745,3 +965,4 @@
 
 </body>
 </html>
+
