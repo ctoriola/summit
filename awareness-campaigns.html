@@ -7,9 +7,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root { --navy: #1e3a8a; --accent: #fbbf24; }
-  </style>
+      @keyframes ribbon-wave {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+    }
+
+    .preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .ribbon-container {
+      position: relative;
+      width: 200px;
+      height: 60px;
+      overflow: hidden;
+      background: linear-gradient(90deg, transparent, rgba(218, 193, 241, 0.2), transparent);
+      border-radius: 30px;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #c39de6, #dac1f1);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 20px rgba(195, 157, 230, 0.6);
+      animation: ribbon-wave 1.5s linear infinite;
+    }
+
+    .ribbon:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .ribbon:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    </style>
 </head>
 <body class="antialiased text-gray-800 bg-white">
+
+<!-- PRELOADER -->
+<div id="preloader" class="preloader">
+  <div class="ribbon-container">
+    <div class="ribbon"></div>
+    <div class="ribbon"></div>
+    <div class="ribbon"></div>
+  </div>
+</div>
+
 
 <header class="bg-white text-gray-900 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -192,6 +259,11 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Hide preloader
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('hidden');
+    }
     const btn = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');
     const overlay = document.getElementById('mobileOverlay');
@@ -266,3 +338,4 @@
     }
   });
 </script>
+
